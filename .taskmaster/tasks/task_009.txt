@@ -1,102 +1,13 @@
 # Task ID: 9
-# Title: 학습 진행도 달력
+# Title: 학습 사이클 로직 구현
 # Status: pending
-# Dependencies: 5, 7
-# Priority: medium
-# Description: 사용자의 학습 기록과 사이클/날짜별 진행 상황을 시각화하는 달력 UI를 만듭니다.
+# Dependencies: 4
+# Priority: high
+# Description: 사용자의 진행 상황(현재 사이클, 날짜)에 따라 학습할 단어 목록을 결정하는 로직을 구현합니다.
 # Details:
-1. 달력 컴포넌트를 디자인하고 구현합니다.
-2. Firestore에서 사용자의 시험 기록을 가져옵니다.
-3. 시험을 완료한 날짜를 달력에 표시합니다.
-4. 완료된 각 시험에 대한 사이클 및 날짜 정보를 보여줍니다.
-5. 시험 성과에 대한 시각적 표시기(예: 점수에 따른 색상 코딩)를 추가합니다.
-6. 월 이동 기능을 구현합니다.
-
-```tsx
-// LearningCalendar.tsx
-const LearningCalendar: React.FC = () => {
-  const { user } = useAuth();
-  const [currentMonth, setCurrentMonth] = useState(new Date());
-  const [testResults, setTestResults] = useState<Record<string, TestResult>>({});
-  const [loading, setLoading] = useState(true);
-  
-  useEffect(() => {
-    const fetchTestResults = async () => {
-      if (user) {
-        const q = query(
-          collection(db, 'testResults'),
-          where('userId', '==', user.uid),
-          orderBy('date', 'desc')
-        );
-        
-        const snapshot = await getDocs(q);
-        const results: Record<string, TestResult> = {};
-        
-        snapshot.docs.forEach(doc => {
-          const result = doc.data() as TestResult;
-          // 쉬운 조회를 위해 날짜를 YYYY-MM-DD 형식으로 포맷
-          const dateStr = result.date.toDate().toISOString().split('T')[0];
-          results[dateStr] = result;
-        });
-        
-        setTestResults(results);
-        setLoading(false);
-      }
-    };
-    
-    fetchTestResults();
-  }, [user]);
-  
-  const renderCalendarDays = () => {
-    // 달력 날짜 렌더링 로직
-    // ...
-  };
-  
-  const navigateMonth = (direction: 'prev' | 'next') => {
-    const newMonth = new Date(currentMonth);
-    if (direction === 'prev') {
-      newMonth.setMonth(newMonth.getMonth() - 1);
-    } else {
-      newMonth.setMonth(newMonth.getMonth() + 1);
-    }
-    setCurrentMonth(newMonth);
-  };
-  
-  if (loading) return <LoadingSpinner />;
-  
-  return (
-    <div className="learning-calendar">
-      <div className="calendar-header">
-        <button onClick={() => navigateMonth('prev')}>이전</button>
-        <h2>{currentMonth.toLocaleString('default', { month: 'long', year: 'numeric' })}</h2>
-        <button onClick={() => navigateMonth('next')}>다음</button>
-      </div>
-      
-      <div className="calendar-grid">
-        {/* 날짜 헤더: 일, 월, 등. */}
-        <div className="calendar-days">
-          {renderCalendarDays()}
-        </div>
-      </div>
-      
-      <div className="legend">
-        <div className="legend-item">
-          <div className="color-box high-score"></div>
-          <span>90-100%</span>
-        </div>
-        <div className="legend-item">
-          <div className="color-box medium-score"></div>
-          <span>70-89%</span>
-        </div>
-        <div className="legend-item">
-          <div className="color-box low-score"></div>
-          <span>0-69%</span>
-        </div>
-      </div>
-    </div>
-  );
-};
-```
+1. 사용자의 `currentCycle`과 `currentDay`를 기반으로 Firestore에서 해당 범위의 단어를 가져오는 `getWordsForToday` 함수를 `services/wordService.js`에 구현합니다.
+2. 5단계 학습 사이클 규칙에 따라 각기 다른 범위의 단어를 선택하는 알고리즘을 구현합니다.
+3. 학습 완료 시, 사용자의 `currentDay` 또는 `currentCycle`을 업데이트하는 로직을 구현합니다.
 
 # Test Strategy:
-다른 달에 대한 달력 렌더링을 테스트합니다. 시험 결과가 달력에 올바르게 표시되는지 확인합니다. 월 간 이동을 테스트합니다. 색상 코딩이 시험 점수를 정확하게 반영하는지 확인합니다. 다양한 시험 결과 시나리오로 테스트합니다.
+각 사이클/날짜 조합에 대해 올바른 단어 목록을 가져오는지 단위 테스트 또는 통합 테스트로 검증합니다. 한 사이클이 끝났을 때 다음 사이클로 정상적으로 넘어가는지 확인합니다.

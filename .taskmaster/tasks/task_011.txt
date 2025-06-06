@@ -1,98 +1,14 @@
 # Task ID: 11
-# Title: 내비게이션 및 라우팅
+# Title: 시험 채점 및 결과 저장 로직 구현
 # Status: pending
-# Dependencies: 2, 6, 9, 10
+# Dependencies: 10
 # Priority: medium
-# Description: 앱의 여러 섹션 간 내비게이션과 인증된 사용자를 위한 보호된 경로(protected routes)를 포함한 애플리케이션 라우팅을 구현합니다.
+# Description: 사용자가 제출한 답안을 채점하고, 결과를 계산하여 Firestore `testResults` 컬렉션에 저장합니다.
 # Details:
-1. 다음 경로로 React Router를 설정합니다:
-   - `/` - 홈/랜딩 페이지
-   - `/login` - 로그인 페이지
-   - `/register` - 회원가입 페이지
-   - `/dashboard` - 사용자 대시보드 (보호됨)
-   - `/test` - 단어 시험 페이지 (보호됨)
-   - `/results/:resultId` - 시험 결과 페이지 (보호됨)
-   - `/progress` - 학습 진행도 달력 (보호됨)
-   - `/settings` - 사용자 설정 및 언어 환경설정 (보호됨)
-2. 주요 섹션으로 연결되는 내비게이션 컴포넌트를 생성합니다.
-3. 인증되지 않은 사용자를 리디렉션하는 보호된 경로 래퍼를 구현합니다.
-4. 반응형 모바일 내비게이션 메뉴를 추가합니다.
-
-```tsx
-// App.tsx
-const App: React.FC = () => {
-  return (
-    <Router>
-      <AuthProvider>
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route 
-            path="/dashboard" 
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/test" 
-            element={
-              <ProtectedRoute>
-                <VocabularyTest />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/results/:resultId" 
-            element={
-              <ProtectedRoute>
-                <TestResults />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/progress" 
-            element={
-              <ProtectedRoute>
-                <LearningProgress />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/settings" 
-            element={
-              <ProtectedRoute>
-                <UserSettings />
-              </ProtectedRoute>
-            } 
-          />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-      </AuthProvider>
-    </Router>
-  );
-};
-
-// ProtectedRoute.tsx
-const ProtectedRoute: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const { user, loading } = useAuth();
-  const navigate = useNavigate();
-  
-  useEffect(() => {
-    if (!loading && !user) {
-      navigate('/login');
-    }
-  }, [user, loading, navigate]);
-  
-  if (loading) return <LoadingSpinner />;
-  
-  return user ? <>{children}</> : null;
-};
-```
+1. '채점하기' 버튼 클릭 시, 사용자의 답안과 정답을 비교하는 채점 함수를 구현합니다.
+2. 정답/오답 단어 목록, 총점, 정답률을 계산합니다.
+3. 채점 결과를 Firestore의 `testResults` 컬렉션에 새 문서로 저장합니다.
+4. 결과 저장 후, 사용자의 학습 진행도(`currentDay` 등)를 다음 단계로 업데이트합니다.
 
 # Test Strategy:
-모든 경로 간의 내비게이션을 테스트합니다. 보호된 경로가 인증되지 않은 사용자를 로그인으로 리디렉션하는지 확인합니다. 다른 화면 크기에서 반응형 내비게이션을 테스트합니다. 활성 내비게이션 항목이 올바르게 강조 표시되는지 확인합니다.
+정답과 오답이 섞인 시나리오에서 채점이 정확하게 이루어지는지 테스트합니다. Firestore에 시험 결과가 설계된 스키마대로 올바르게 저장되는지 확인합니다.

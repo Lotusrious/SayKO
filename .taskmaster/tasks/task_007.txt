@@ -1,77 +1,14 @@
 # Task ID: 7
-# Title: 시험 채점 및 결과 표시
+# Title: 단어 및 예문 표시 UI 구현
 # Status: pending
-# Dependencies: 6
+# Dependencies: 4
 # Priority: medium
-# Description: 단어 시험 채점 시스템을 구현하고, 정답/오답 표시기와 함께 결과를 보여줍니다.
+# Description: 학습 페이지에 단어와 그에 따른 예문 목록을 표시하는 UI 컴포넌트를 개발합니다.
 # Details:
-1. 사용자 답변과 정답을 비교하는 채점 서비스를 생성합니다.
-2. 사소한 오타나 변형을 고려하는 채점 알고리즘을 구현합니다.
-3. 다음을 보여주는 결과 페이지를 디자인하고 구현합니다:
-   - 총 점수 (X/25)
-   - 정답률
-   - 정답/오답 표시기가 있는 각 단어
-   - 틀린 단어에 대한 정답
-4. 시험 결과를 Firestore에 저장합니다.
-
-```typescript
-// grading.service.ts
-export const gradeTest = async (userId: string, answers: Record<string, string>, words: VocabularyWord[], languagePair: string): Promise<TestResult> => {
-  const [sourceLanguage, targetLanguage] = languagePair.split('-');
-  
-  // 사용자의 현재 사이클과 날짜 가져오기
-  const userDoc = await getDoc(doc(db, 'users', userId));
-  const { currentCycle, currentDay } = userDoc.data() as User;
-  
-  let correctCount = 0;
-  const gradedWords = words.map(word => {
-    const userAnswer = answers[word.id] || '';
-    const correctAnswer = word[targetLanguage as keyof VocabularyWord] as string;
-    const isCorrect = isAnswerCorrect(userAnswer, correctAnswer);
-    
-    if (isCorrect) correctCount++;
-    
-    return {
-      wordId: word.id,
-      isCorrect,
-      userAnswer
-    };
-  });
-  
-  // 시험 결과 생성
-  const result: TestResult = {
-    userId,
-    date: Timestamp.now(),
-    cycle: currentCycle,
-    day: currentDay,
-    languagePair,
-    correctCount,
-    totalCount: words.length,
-    words: gradedWords
-  };
-  
-  // Firestore에 저장
-  await addDoc(collection(db, 'testResults'), result);
-  
-  // 시험이 완료되면 다음 날짜로 진행
-  await advanceToNextDay(userId);
-  
-  return result;
-};
-
-// 답변이 맞는지 확인하는 헬퍼 함수 (약간의 유연성 포함)
-const isAnswerCorrect = (userAnswer: string, correctAnswer: string): boolean => {
-  // 기본 비교 (대소문자 무시)
-  if (userAnswer.toLowerCase().trim() === correctAnswer.toLowerCase().trim()) {
-    return true;
-  }
-  
-  // 여기에 더 정교한 비교 로직을 추가할 수 있습니다.
-  // 예: 사소한 오타를 위한 레벤슈타인 거리
-  
-  return false;
-};
-```
+1. 현재 학습할 단어를 표시하는 `WordCard` 컴포넌트를 생성합니다.
+2. `WordCard` 내에 해당 단어의 예문 목록을 표시하는 `ExampleList` 컴포넌트를 포함시킵니다.
+3. 각 예문에서 학습 중인 핵심 단어에 밑줄 또는 다른 배경색 스타일을 적용하여 시각적으로 강조합니다.
+4. 부모 컴포넌트로부터 단어 객체를 props로 받아 UI를 렌더링하도록 구현합니다.
 
 # Test Strategy:
-정답, 오답, 사소한 오타가 있는 답변 등 다양한 입력으로 채점 정확도를 테스트합니다. 결과 표시가 올바른지 확인합니다. Firestore에 결과 저장을 테스트합니다. 시험 완료 후 사용자가 다음 날로 올바르게 진행되는지 확인합니다.
+단어와 3개 이상의 예문이 정상적으로 표시되는지 확인합니다. 예문 내 핵심 단어가 올바르게 하이라이트 처리되는지 확인합니다. 다양한 길이의 단어와 예문이 주어져도 UI가 깨지지 않는지 테스트합니다.

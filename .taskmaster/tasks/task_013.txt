@@ -1,63 +1,14 @@
 # Task ID: 13
-# Title: AI 기반 기능 통합 (향후)
-# Status: deferred
-# Dependencies: 2, 4
-# Priority: low
-# Description: 단어 시험, 발음 피드백 또는 대화 연습을 향상시키기 위해 AI/ML 기능을 통합하는 것을 탐색합니다.
+# Title: '학습 성취도 확인 모드' 구현
+# Status: pending
+# Dependencies: 10
+# Priority: medium
+# Description: 사용자가 원할 때 자신의 암기 수준을 점검할 수 있는 예비 시험 모드를 구현합니다.
 # Details:
-1. AI 기반 기능의 잠재적 사용 사례를 조사합니다:
-   - 개인화된 단어 추천
-   - 발음 평가
-   - 문맥 기반 예문 생성
-   - AI 챗봇을 통한 대화 연습
-2. 적합한 AI/ML API 또는 모델을 선택하고 평가합니다.
-3. 선택한 AI 기능을 통합하기 위한 개념 증명(PoC)을 개발합니다.
-4. PoC를 기반으로 기능을 전체 애플리케이션에 통합합니다.
-
-```typescript
-// pronuncation.service.ts (Example PoC)
-// 이 기능은 Web Speech API 또는 외부 서비스를 사용할 수 있습니다.
-
-// 1. 사용자 오디오 캡처
-export const recordUserAudio = async (): Promise<Blob> => {
-  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-  const mediaRecorder = new MediaRecorder(stream);
-  const audioChunks: Blob[] = [];
-  
-  mediaRecorder.ondataavailable = event => {
-    audioChunks.push(event.data);
-  };
-  
-  return new Promise(resolve => {
-    mediaRecorder.onstop = () => {
-      resolve(new Blob(audioChunks));
-    };
-    
-    // 5초 녹음 또는 사용자가 멈출 때까지
-    setTimeout(() => {
-      mediaRecorder.stop();
-    }, 5000);
-    
-    mediaRecorder.start();
-  });
-};
-
-// 2. 발음 평가를 위해 API로 오디오 전송
-export const evaluatePronunciation = async (audio: Blob, word: string): Promise<number> => {
-  const formData = new FormData();
-  formData.append('audio', audio);
-  formData.append('word', word);
-  
-  // 가상의 발음 평가 엔드포인트
-  const response = await fetch('/api/pronunciation-evaluation', {
-    method: 'POST',
-    body: formData,
-  });
-  
-  const result = await response.json();
-  return result.score; // 0-100점 척도의 점수
-};
-```
+1. 대시보드 또는 학습 페이지에 '시험 모드 시작' 버튼을 추가합니다.
+2. 이 모드는 정규 시험과 동일한 UI와 로직을 사용하지만, 학습 사이클 진행도에는 영향을 주지 않습니다.
+3. 시험 범위는 현재 학습 사이클의 단어들을 대상으로 할 수 있습니다.
+4. 채점 결과는 별도로 기록하거나, '오답 노트' 기능을 위해 임시로 상태에 저장합니다.
 
 # Test Strategy:
-AI 기능의 정확성과 신뢰성을 테스트합니다. 다양한 입력(다른 억양, 배경 소음 등)으로 AI 응답을 평가합니다. AI 기능이 사용자 경험을 향상시키는지 확인합니다. API 통합의 성능 영향을 모니터링합니다.
+'시험 모드'를 완료해도 사용자의 정규 학습 `currentDay`가 변경되지 않는지 확인합니다. 이 모드에서 발생한 오답이 '오답 노트' 기능으로 올바르게 전달되는지 테스트합니다.
