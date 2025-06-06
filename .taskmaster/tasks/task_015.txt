@@ -1,0 +1,89 @@
+# Task ID: 15
+# Title: 최종 테스트 및 출시
+# Status: pending
+# Dependencies: 14
+# Priority: high
+# Description: 최종 사용자 테스트를 수행하고, 버그를 수정하고, 플랫폼의 공식 출시를 준비합니다.
+# Details:
+1. 친구, 가족 또는 대상 사용자 그룹과 함께 사용자 수용 테스트(UAT)를 수행합니다.
+2. UAT로부터 피드백을 수집하고 우선순위를 정합니다.
+3. 보고된 버그를 수정하고 피드백을 기반으로 개선 사항을 구현합니다.
+4. 모든 기능이 프로덕션 환경에서 예상대로 작동하는지 확인합니다.
+5. 최종 배포를 수행합니다.
+6. 소셜 미디어 또는 기타 채널을 통해 플랫폼 출시를 발표합니다.
+
+# Test Strategy:
+실제 사용자와 함께 엔드투엔드 테스트를 수행합니다. 모든 기능이 다양한 시나리오에서 올바르게 작동하는지 확인합니다. 성능 및 로드 시간을 모니터링합니다. 데이터 무결성을 테스트하고 데이터베이스에 올바른 데이터가 저장되는지 확인합니다. 모든 주요 브라우저에서 호환성을 테스트합니다.
+
+```javascript
+// firebase.json
+{
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
+}
+
+// firestore.rules
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // User profiles - only accessible by the user themselves
+    match /users/{userId} {
+      allow read, update, delete: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null;
+    }
+    
+    // Vocabulary words - readable by all authenticated users
+    match /vocabularies/{wordId} {
+      allow read: if request.auth != null;
+      allow write: if false; // Only admins can modify vocabulary (via Firebase console)
+    }
+    
+    // Test results - users can only access their own results
+    match /testResults/{resultId} {
+      allow read: if request.auth != null && request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null && request.auth.uid == request.resource.data.userId;
+      allow update, delete: if false; // Test results should not be modified after creation
+    }
+  }
+}
+
+// GitHub Actions workflow (.github/workflows/firebase-deploy.yml)
+name: Deploy to Firebase Hosting
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - run: npm ci
+      - run: npm run build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+          channelId: live
+          projectId: sayko-learning-platform
+```

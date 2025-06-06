@@ -1,0 +1,78 @@
+# Task ID: 6
+# Title: 단어 시험 인터페이스
+# Status: pending
+# Dependencies: 2, 4, 5
+# Priority: medium
+# Description: 25개의 단어와 입력 필드가 있는 일일 단어 시험을 위한 UI를 만듭니다.
+# Details:
+1. 단어 시험 페이지를 디자인하고 구현합니다.
+2. 원본 단어와 대상 단어 입력 필드를 표시하기 위한 컴포넌트를 생성합니다.
+3. 사용자 입력에 대한 폼 유효성 검사를 구현합니다.
+4. 현재 질문을 보여주는 진행 표시기(예: 7/25)를 추가합니다.
+5. 시험을 완료하기 위한 제출 버튼을 만듭니다.
+6. 모바일 및 데스크톱을 위한 반응형 디자인을 구현합니다.
+
+```tsx
+// VocabularyTest.tsx
+const VocabularyTest: React.FC = () => {
+  const [words, setWords] = useState<VocabularyWord[]>([]);
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [loading, setLoading] = useState(true);
+  const { user } = useAuth();
+  
+  useEffect(() => {
+    const loadWords = async () => {
+      if (user) {
+        const testWords = await getWordsForCurrentDay(user.uid);
+        setWords(testWords);
+        setLoading(false);
+      }
+    };
+    
+    loadWords();
+  }, [user]);
+  
+  const handleInputChange = (wordId: string, value: string) => {
+    setAnswers(prev => ({
+      ...prev,
+      [wordId]: value
+    }));
+  };
+  
+  const handleSubmit = async () => {
+    // 채점을 위해 시험 제출
+    // ...
+  };
+  
+  if (loading) return <LoadingSpinner />;
+  
+  return (
+    <div className="vocabulary-test">
+      <h1>일일 단어 시험</h1>
+      <div className="progress-indicator">질문: {Object.keys(answers).length}/25</div>
+      
+      <form onSubmit={handleSubmit}>
+        {words.map((word, index) => (
+          <div key={word.id} className="question">
+            <div className="source-word">{word.korean}</div>
+            <input 
+              type="text" 
+              value={answers[word.id] || ''}
+              onChange={(e) => handleInputChange(word.id, e.target.value)}
+              placeholder="번역 입력"
+              required
+            />
+          </div>
+        ))}
+        
+        <button type="submit" disabled={Object.keys(answers).length < 25}>
+          시험 제출
+        </button>
+      </form>
+    </div>
+  );
+};
+```
+
+# Test Strategy:
+다양한 화면 크기에서 UI를 테스트합니다. 25개의 모든 단어가 올바르게 표시되는지 확인합니다. 폼 유효성 검사 및 제출을 테스트합니다. 진행 표시기가 올바르게 업데이트되는지 확인합니다. 다른 언어 쌍으로 테스트합니다.

@@ -1,0 +1,20 @@
+# Task ID: 1
+# Title: 프로젝트 설정 및 구성
+# Status: done
+# Dependencies: None
+# Priority: high
+# Description: SayKO 플랫폼을 위해 Firebase와 연동된 React TypeScript 프로젝트를 초기화합니다.
+# Details:
+1. Create React App 또는 Vite를 사용하여 TypeScript 기반의 새 React 프로젝트를 생성합니다.
+2. Firebase 콘솔에서 Firebase 프로젝트를 설정합니다.
+3. Firebase 인증, Firestore, 호스팅을 구성합니다.
+4. 필요한 의존성을 설치합니다:
+   - firebase
+   - react-router-dom
+   - 스타일링을 위한 styled-components 또는 tailwindcss
+5. components, pages, services, types 폴더를 포함한 기본 프로젝트 구조를 생성합니다.
+6. Firebase 설정을 위한 환경 변수를 설정합니다.
+7. Git 저장소를 초기화하고 초기 커밋을 생성합니다.
+
+# Test Strategy:
+프로젝트가 오류 없이 성공적으로 빌드되는지 확인합니다. Firestore에서 간단한 테스트 문서를 만들고 테스트 사용자를 인증하여 Firebase 연결을 테스트합니다.

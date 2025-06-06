@@ -1,0 +1,17 @@
+# Task: 학습 사이클 로직 구현
+
+- **ID**: 9
+- **Status**: pending
+- **Priority**: high
+- **Dependencies**: 4
+
+## Description
+사용자의 진행 상황(현재 사이클, 날짜)에 따라 학습할 단어 목록을 결정하는 로직을 구현합니다.
+
+## Details
+1. 사용자의 `currentCycle`과 `currentDay`를 기반으로 Firestore에서 해당 범위의 단어를 가져오는 `getWordsForToday` 함수를 `services/wordService.js`에 구현합니다.
+2. 5단계 학습 사이클 규칙에 따라 각기 다른 범위의 단어를 선택하는 알고리즘을 구현합니다.
+3. 학습 완료 시, 사용자의 `currentDay` 또는 `currentCycle`을 업데이트하는 로직을 구현합니다.
+
+## Test Strategy
+각 사이클/날짜 조합에 대해 올바른 단어 목록을 가져오는지 단위 테스트 또는 통합 테스트로 검증합니다. 한 사이클이 끝났을 때 다음 사이클로 정상적으로 넘어가는지 확인합니다. 
