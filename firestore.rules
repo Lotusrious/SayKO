@@ -1,0 +1,26 @@
+// firestore.rules
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 'vocabularies' 컬렉션: 인증된 사용자는 누구나 읽을 수 있습니다.
+    match /vocabularies/{docId} {
+      allow read: if request.auth != null;
+      allow write: if false; // 클라이언트에서의 쓰기는 허용하지 않음 (관리자 스크립트로만 추가)
+    }
+
+    // 'users' 컬렉션: 사용자는 자신의 문서만 읽고 쓸 수 있습니다.
+    match /users/{userId} {
+      allow read, write: if request.auth.uid == userId;
+    }
+
+    // 'testResults' 컬렉션: 사용자는 자신의 시험 결과만 생성, 읽기, 업데이트할 수 있습니다.
+    match /testResults/{resultId} {
+      allow read: if request.auth.uid == resource.data.userId;
+      allow create: if request.auth.uid == request.resource.data.userId;
+      // 사용자는 자신의 시험 결과 문서를 업데이트할 수 있습니다.
+      allow update: if request.auth.uid == resource.data.userId;
+    }
+  }
+} 

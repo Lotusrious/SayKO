@@ -1,20 +1,28 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
-import { onAuthStateChanged } from 'firebase/auth';
-import type { User } from 'firebase/auth';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import type { User as AuthUser } from 'firebase/auth';
 import { auth } from '../firebase';
+import { getUserData } from '../services/userService';
+import type { User as DbUser } from '../types/firestore';
 
 // Context에 담길 데이터의 타입을 정의합니다.
 interface AuthContextType {
-  currentUser: User | null; // 현재 로그인된 사용자 정보 (User 객체 또는 null)
-  loading: boolean; // 로딩 상태
+  currentUser: AuthUser | null;
+  dbUser: DbUser | null; // Firestore 사용자 정보
+  loading: boolean;
+  logout: () => Promise<void>; // logout 함수 타입 추가
+  refreshDbUser: () => Promise<void>; // dbUser 갱신 함수
 }
 
 // 1. 인증 컨텍스트(Auth Context)를 생성합니다.
 // 앱의 다른 컴포넌트들이 이 컨텍스트를 통해 currentUser와 loading 값에 접근할 수 있습니다.
 const AuthContext = createContext<AuthContextType>({
   currentUser: null,
+  dbUser: null,
   loading: true,
+  logout: async () => {}, // 기본값 추가
+  refreshDbUser: async () => {},
 });
 
 /**
@@ -36,15 +44,26 @@ interface AuthProviderProps {
  * 이 컴포넌트는 자식 컴포넌트(children)에게 인증 상태(로그인한 유저 정보)를 제공합니다.
  */
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [currentUser, setCurrentUser] = useState<AuthUser | null>(null);
+  const [dbUser, setDbUser] = useState<DbUser | null>(null);
   const [loading, setLoading] = useState(true); // 앱 시작 시 인증 상태 확인 중임을 나타냄
+
+  const fetchDbUser = async (user: AuthUser) => {
+    const userData = await getUserData(user);
+    setDbUser(userData);
+  };
 
   // 컴포넌트가 처음 마운트될 때 한 번만 실행됩니다.
   useEffect(() => {
     // onAuthStateChanged: Firebase Auth의 로그인 상태 변경을 감지하는 리스너(listener)입니다.
     // 사용자가 로그인하거나 로그아웃할 때마다 이 함수가 호출됩니다.
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user); // 감지된 사용자 정보로 state 업데이트
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      setCurrentUser(user);
+      if (user) {
+        await fetchDbUser(user);
+      } else {
+        setDbUser(null);
+      }
       setLoading(false); // 로딩 상태 종료
     });
 
@@ -53,10 +72,25 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     return unsubscribe;
   }, []); // 빈 배열을 전달하여 최초 렌더링 시에만 실행되도록 함
 
+  const refreshDbUser = async () => {
+    if (currentUser) {
+      setLoading(true);
+      await fetchDbUser(currentUser);
+      setLoading(false);
+    }
+  };
+
+  const logout = () => {
+    return signOut(auth);
+  };
+
   // 컨텍스트에 담을 값
   const value = {
     currentUser,
+    dbUser,
     loading,
+    logout, // value 객체에 logout 함수 추가
+    refreshDbUser,
   };
 
   // AuthContext.Provider를 통해 value를 하위 컴포넌트들에게 전달합니다.

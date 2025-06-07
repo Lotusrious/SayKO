@@ -1,6 +1,6 @@
 # Task ID: 10
 # Title: 기본 단어 시험 UI 구현
-# Status: pending
+# Status: done
 # Dependencies: 9
 # Priority: medium
 # Description: 매일 25개의 단어에 대해 사용자가 답을 입력할 수 있는 시험 인터페이스를 구현합니다.

@@ -13,6 +13,11 @@ dist-ssr
 *.local
 .env
 
+# Service account key
+firebase-service-account.json
+sayko-f08c1-firebase-adminsdk-fbsvc-7376c9e12e.json
+sayko-f08c1-99368fab242f.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

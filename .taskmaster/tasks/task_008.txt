@@ -1,6 +1,6 @@
 # Task ID: 8
 # Title: 단어 클릭 시 상세 정보 모달 구현
-# Status: pending
+# Status: done
 # Dependencies: 7
 # Priority: medium
 # Description: 하이라이트된 예문 속 단어를 클릭하면, 해당 단어의 상세 정보(정의, 품사 등)를 보여주는 모달 창을 구현합니다.

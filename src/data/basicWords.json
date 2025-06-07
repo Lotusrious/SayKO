@@ -1,0 +1,351 @@
+[
+  {
+    "id": "basic-001",
+    "word": "나",
+    "meaning": {
+      "en": "I, me",
+      "de": "ich, mich"
+    },
+    "pronunciation": "na",
+    "category": "기초 단어",
+    "type": "pronoun"
+  },
+  {
+    "id": "basic-002",
+    "word": "너",
+    "meaning": {
+      "en": "you",
+      "de": "du, dich"
+    },
+    "pronunciation": "neo",
+    "category": "기초 단어",
+    "type": "pronoun"
+  },
+  {
+    "id": "basic-003",
+    "word": "우리",
+    "meaning": {
+      "en": "we, us, our",
+      "de": "wir, uns, unser"
+    },
+    "pronunciation": "uri",
+    "category": "기초 단어",
+    "type": "pronoun"
+  },
+  {
+    "id": "basic-004",
+    "word": "저",
+    "meaning": {
+      "en": "I, me (humble)",
+      "de": "ich, mich (bescheiden)"
+    },
+    "pronunciation": "jeo",
+    "category": "기초 단어",
+    "type": "pronoun"
+  },
+  {
+    "id": "basic-005",
+    "word": "그",
+    "meaning": {
+      "en": "he, him, that",
+      "de": "er, ihn, das"
+    },
+    "pronunciation": "geu",
+    "category": "기초 단어",
+    "type": "pronoun"
+  },
+  {
+    "id": "basic-006",
+    "word": "그녀",
+    "meaning": {
+      "en": "she, her",
+      "de": "sie, ihr"
+    },
+    "pronunciation": "geunyeo",
+    "category": "기초 단어",
+    "type": "pronoun"
+  },
+  {
+    "id": "basic-007",
+    "word": "이것",
+    "meaning": {
+      "en": "this",
+      "de": "dies"
+    },
+    "pronunciation": "igeot",
+    "category": "기초 단어",
+    "type": "pronoun"
+  },
+  {
+    "id": "basic-008",
+    "word": "그것",
+    "meaning": {
+      "en": "it, that",
+      "de": "es, das"
+    },
+    "pronunciation": "geugeot",
+    "category": "기초 단어",
+    "type": "pronoun"
+  },
+  {
+    "id": "basic-009",
+    "word": "저것",
+    "meaning": {
+      "en": "that (over there)",
+      "de": "das (dort drüben)"
+    },
+    "pronunciation": "jeogeot",
+    "category": "기초 단어",
+    "type": "pronoun"
+  },
+  {
+    "id": "basic-010",
+    "word": "가족",
+    "meaning": {
+      "en": "family",
+      "de": "Familie"
+    },
+    "pronunciation": "gajok",
+    "category": "기초 단어",
+    "type": "noun"
+  },
+  {
+    "id": "basic-011",
+    "word": "엄마",
+    "meaning": {
+      "en": "mom",
+      "de": "Mama"
+    },
+    "pronunciation": "eomma",
+    "category": "기초 단어",
+    "type": "noun"
+  },
+  {
+    "id": "basic-012",
+    "word": "아빠",
+    "meaning": {
+      "en": "dad",
+      "de": "Papa"
+    },
+    "pronunciation": "appa",
+    "category": "기초 단어",
+    "type": "noun"
+  },
+  {
+    "id": "basic-013",
+    "word": "형",
+    "meaning": {
+      "en": "older brother (for males)",
+      "de": "älterer Bruder (für Männer)"
+    },
+    "pronunciation": "hyeong",
+    "category": "기초 단어",
+    "type": "noun"
+  },
+  {
+    "id": "basic-014",
+    "word": "오빠",
+    "meaning": {
+      "en": "older brother (for females)",
+      "de": "älterer Bruder (für Frauen)"
+    },
+    "pronunciation": "oppa",
+    "category": "기초 단어",
+    "type": "noun"
+  },
+  {
+    "id": "basic-015",
+    "word": "누나",
+    "meaning": {
+      "en": "older sister (for males)",
+      "de": "ältere Schwester (für Männer)"
+    },
+    "pronunciation": "nuna",
+    "category": "기초 단어",
+    "type": "noun"
+  },
+  {
+    "id": "basic-016",
+    "word": "언니",
+    "meaning": {
+      "en": "older sister (for females)",
+      "de": "ältere Schwester (für Frauen)"
+    },
+    "pronunciation": "eonni",
+    "category": "기초 단어",
+    "type": "noun"
+  },
+  {
+    "id": "basic-017",
+    "word": "동생",
+    "meaning": {
+      "en": "younger sibling",
+      "de": "jüngeres Geschwister"
+    },
+    "pronunciation": "dongsaeng",
+    "category": "기초 단어",
+    "type": "noun"
+  },
+  {
+    "id": "basic-018",
+    "word": "친구",
+    "meaning": {
+      "en": "friend",
+      "de": "Freund"
+    },
+    "pronunciation": "chingu",
+    "category": "기초 단어",
+    "type": "noun"
+  },
+  {
+    "id": "particle-001",
+    "word": "은/는",
+    "meaning": {
+      "en": "topic marker",
+      "de": "Themenmarker"
+    },
+    "pronunciation": "eun/neun",
+    "category": "조사",
+    "type": "particle",
+    "examples": [
+      {
+        "ko": "저는 학생입니다.",
+        "en": "I am a student.",
+        "de": "Ich bin ein Student."
+      },
+      {
+        "ko": "사과는 맛있습니다.",
+        "en": "Apples are delicious.",
+        "de": "Äpfel sind lecker."
+      }
+    ]
+  },
+  {
+    "id": "particle-002",
+    "word": "이/가",
+    "meaning": {
+      "en": "subject marker",
+      "de": "Subjektmarker"
+    },
+    "pronunciation": "i/ga",
+    "category": "조사",
+    "type": "particle",
+    "examples": [
+      {
+        "ko": "고양이가 귀엽습니다.",
+        "en": "The cat is cute.",
+        "de": "Die Katze ist süß."
+      },
+      {
+        "ko": "이것이 제 책입니다.",
+        "en": "This is my book.",
+        "de": "Das ist mein Buch."
+      }
+    ]
+  },
+  {
+    "id": "particle-003",
+    "word": "을/를",
+    "meaning": {
+      "en": "object marker",
+      "de": "Objektmarker"
+    },
+    "pronunciation": "eul/reul",
+    "category": "조사",
+    "type": "particle",
+    "examples": [
+      {
+        "ko": "저는 밥을 먹습니다.",
+        "en": "I eat a meal.",
+        "de": "Ich esse eine Mahlzeit."
+      },
+      {
+        "ko": "영화를 봅니다.",
+        "en": "I watch a movie.",
+        "de": "Ich schaue einen Film."
+      }
+    ]
+  },
+  {
+    "id": "particle-004",
+    "word": "에",
+    "meaning": {
+      "en": "at, to, in (time/place)",
+      "de": "in, an, zu (Zeit/Ort)"
+    },
+    "pronunciation": "e",
+    "category": "조사",
+    "type": "particle",
+    "examples": [
+      {
+        "ko": "저는 학교에 갑니다.",
+        "en": "I go to school.",
+        "de": "Ich gehe zur Schule."
+      },
+      {
+        "ko": "3시에 만나요.",
+        "en": "Let's meet at 3 o'clock.",
+        "de": "Treffen wir uns um 3 Uhr."
+      }
+    ]
+  },
+  {
+    "id": "particle-005",
+    "word": "에서",
+    "meaning": {
+      "en": "at, in, from (location of action)",
+      "de": "in, bei, von (Ort der Handlung)"
+    },
+    "pronunciation": "eseo",
+    "category": "조사",
+    "type": "particle",
+    "examples": [
+      {
+        "ko": "저는 도서관에서 공부합니다.",
+        "en": "I study at the library.",
+        "de": "Ich lerne in der Bibliothek."
+      },
+      {
+        "ko": "한국에서 왔어요.",
+        "en": "I came from Korea.",
+        "de": "Ich komme aus Korea."
+      }
+    ]
+  },
+  {
+    "id": "particle-006",
+    "word": "의",
+    "meaning": {
+      "en": "possessive marker ('s)",
+      "de": "Genitivmarker"
+    },
+    "pronunciation": "ui",
+    "category": "조사",
+    "type": "particle",
+    "examples": [
+      {
+        "ko": "이것은 저의 가방입니다.",
+        "en": "This is my bag.",
+        "de": "Das ist meine Tasche."
+      }
+    ]
+  },
+  {
+    "id": "particle-007",
+    "word": "도",
+    "meaning": {
+      "en": "also, too",
+      "de": "auch"
+    },
+    "pronunciation": "do",
+    "category": "조사",
+    "type": "particle",
+    "examples": [
+      {
+        "ko": "저도 학생입니다.",
+        "en": "I am a student too.",
+        "de": "Ich bin auch Student."
+      }
+    ]
+  }
+] 

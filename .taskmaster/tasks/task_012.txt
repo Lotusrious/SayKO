@@ -1,6 +1,6 @@
 # Task ID: 12
 # Title: 시험 결과 피드백 UI 구현
-# Status: pending
+# Status: in-progress
 # Dependencies: 11
 # Priority: medium
 # Description: 채점 후, 각 문제의 정답/오답 여부와 정답, 총점을 보여주는 결과 페이지를 구현합니다.

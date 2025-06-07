@@ -1,6 +1,6 @@
 # Task ID: 7
 # Title: 단어 및 예문 표시 UI 구현
-# Status: pending
+# Status: done
 # Dependencies: 4
 # Priority: medium
 # Description: 학습 페이지에 단어와 그에 따른 예문 목록을 표시하는 UI 컴포넌트를 개발합니다.

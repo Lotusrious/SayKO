@@ -1,0 +1,5002 @@
+[
+  {
+    "word": "안녕하세요",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "안녕하세요! 만나서 반갑습니다.",
+        "english": "Hello! Nice to meet you."
+      }
+    ]
+  },
+  {
+    "word": "감사합니다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "선물을 주셔서 감사합니다.",
+        "english": "Thank you for the gift."
+      }
+    ]
+  },
+  {
+    "word": "죄송합니다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "죄송합니다, 제가 늦었습니다.",
+        "english": "I'm sorry, I am late."
+      }
+    ]
+  },
+  {
+    "word": "도와주세요",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 숙제를 못 해요. 도와주세요.",
+        "english": "I can't do my homework. Please help me."
+      }
+    ]
+  },
+  {
+    "word": "화장실",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "화장실이 어디에 있어요?",
+        "english": "Where is the bathroom?"
+      }
+    ]
+  },
+  {
+    "word": "어디",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "도서관이 어디에 있어요?",
+        "english": "Where is the library?"
+      }
+    ]
+  },
+  {
+    "word": "얼마나",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 사과는 얼마나 커요?",
+        "english": "How big is this apple?"
+      }
+    ]
+  },
+  {
+    "word": "얼마예요",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 책은 얼마예요?",
+        "english": "How much is this book?"
+      }
+    ]
+  },
+  {
+    "word": "언제",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "언제 학교에 가요?",
+        "english": "When do you go to school?"
+      }
+    ]
+  },
+  {
+    "word": "예약하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 식당에 예약했어요.",
+        "english": "I made a reservation at the restaurant."
+      }
+    ]
+  },
+  {
+    "word": "방문하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 친구 집을 방문했어요.",
+        "english": "I visited my friend's house."
+      }
+    ]
+  },
+  {
+    "word": "지금",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "지금 몇 시예요?",
+        "english": "What time is it now?"
+      }
+    ]
+  },
+  {
+    "word": "나중에",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나중에 만나자.",
+        "english": "Let's meet later."
+      }
+    ]
+  },
+  {
+    "word": "곧",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "곧 비가 올 거예요.",
+        "english": "It will rain soon."
+      }
+    ]
+  },
+  {
+    "word": "오늘",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "오늘 날씨가 좋아요.",
+        "english": "The weather is nice today."
+      }
+    ]
+  },
+  {
+    "word": "내일",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "내일 학교에 갑니다.",
+        "english": "I go to school tomorrow."
+      }
+    ]
+  },
+  {
+    "word": "어제",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "어제 저는 친구를 만났어요.",
+        "english": "Yesterday, I met a friend."
+      }
+    ]
+  },
+  {
+    "word": "어떻게",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이거 어떻게 해요?",
+        "english": "How do you do this?"
+      }
+    ]
+  },
+  {
+    "word": "무엇",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이것은 무엇입니까?",
+        "english": "What is this?"
+      }
+    ]
+  },
+  {
+    "word": "왜",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "왜 학교에 안 갔어요?",
+        "english": "Why didn't you go to school?"
+      }
+    ]
+  },
+  {
+    "word": "누구",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "누구세요?",
+        "english": "Who is it?"
+      }
+    ]
+  },
+  {
+    "word": "공항",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 내일 공항에 갑니다.",
+        "english": "I am going to the airport tomorrow."
+      }
+    ]
+  },
+  {
+    "word": "비행기",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "비행기를 타고 여행을 가요.",
+        "english": "I am going on a trip by airplane."
+      }
+    ]
+  },
+  {
+    "word": "기차",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "기차가 역에 도착했어요.",
+        "english": "The train arrived at the station."
+      }
+    ]
+  },
+  {
+    "word": "지하철",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "지하철을 타고 학교에 가요.",
+        "english": "I take the subway to go to school."
+      }
+    ]
+  },
+  {
+    "word": "택시",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 택시를 탔어요.",
+        "english": "I took a taxi."
+      }
+    ]
+  },
+  {
+    "word": "버스",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 버스를 타고 학교에 가요.",
+        "english": "I take the bus to school."
+      }
+    ]
+  },
+  {
+    "word": "정류장",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "버스 정류장에서 친구를 만났어요.",
+        "english": "I met a friend at the bus stop."
+      }
+    ]
+  },
+  {
+    "word": "출구",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "출구는 오른쪽에 있어요.",
+        "english": "The exit is on the right."
+      }
+    ]
+  },
+  {
+    "word": "입구",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "입구는 오른쪽에 있어요.",
+        "english": "The entrance is on the right."
+      }
+    ]
+  },
+  {
+    "word": "지도",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 지도를 보고 길을 찾았어요.",
+        "english": "I looked at the map and found the way."
+      }
+    ]
+  },
+  {
+    "word": "여권",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "여권을 잊지 마세요.",
+        "english": "Don't forget your passport."
+      }
+    ]
+  },
+  {
+    "word": "표",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "선생님이 학생들에게 시험 표를 나눠주셨습니다.",
+        "english": "The teacher handed out the exam sheets to the students."
+      }
+    ]
+  },
+  {
+    "word": "짐",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "짐이 너무 무거워요.",
+        "english": "The luggage is too heavy."
+      }
+    ]
+  },
+  {
+    "word": "가방",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이것은 제 가방입니다.",
+        "english": "This is my bag."
+      }
+    ]
+  },
+  {
+    "word": "호텔",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 호텔에서 묵어요.",
+        "english": "I stay at a hotel."
+      }
+    ]
+  },
+  {
+    "word": "숙소",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 서울에서 숙소를 예약했어요.",
+        "english": "We booked accommodation in Seoul."
+      }
+    ]
+  },
+  {
+    "word": "방",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 제 방에서 공부해요.",
+        "english": "I study in my room."
+      }
+    ]
+  },
+  {
+    "word": "침대",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 침대에서 잠을 자요.",
+        "english": "I sleep in the bed."
+      }
+    ]
+  },
+  {
+    "word": "예약",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 내일 식당 예약을 했어요.",
+        "english": "I made a reservation at the restaurant for tomorrow."
+      }
+    ]
+  },
+  {
+    "word": "체크인",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "호텔에서 체크인했어요.",
+        "english": "I checked in at the hotel."
+      }
+    ]
+  },
+  {
+    "word": "체크아웃",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "호텔에서 체크아웃을 했어요.",
+        "english": "I checked out of the hotel."
+      }
+    ]
+  },
+  {
+    "word": "여행",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 다음 주에 여행을 갈 거예요.",
+        "english": "I am going on a trip next week."
+      }
+    ]
+  },
+  {
+    "word": "관광",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "서울은 관광하기 좋은 도시입니다.",
+        "english": "Seoul is a good city for tourism."
+      }
+    ]
+  },
+  {
+    "word": "여행자",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "여행자는 새로운 곳을 탐험하는 것을 좋아합니다.",
+        "english": "The traveler likes exploring new places."
+      }
+    ]
+  },
+  {
+    "word": "가이드",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "가이드는 박물관을 안내합니다.",
+        "english": "The guide leads the museum tour."
+      }
+    ]
+  },
+  {
+    "word": "시간",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "지금 몇 시예요?",
+        "english": "What time is it now?"
+      }
+    ]
+  },
+  {
+    "word": "분",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 매일 아침 7시에 일분 동안 운동을 해요.",
+        "english": "I exercise for one minute every morning at 7 o'clock."
+      }
+    ]
+  },
+  {
+    "word": "거리",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 거리에서 친구를 만났어요.",
+        "english": "I met my friend on the street."
+      }
+    ]
+  },
+  {
+    "word": "가깝다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리 집은 학교에서 가깝다.",
+        "english": "My house is close to the school."
+      }
+    ]
+  },
+  {
+    "word": "멀다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "학교가 멀어요.",
+        "english": "The school is far."
+      }
+    ]
+  },
+  {
+    "word": "여기",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "여기 앉으세요.",
+        "english": "Please sit here."
+      }
+    ]
+  },
+  {
+    "word": "저기",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저기 산이 보여요.",
+        "english": "I can see the mountain over there."
+      }
+    ]
+  },
+  {
+    "word": "사람",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "사람들이 공원에서 놀고 있어요.",
+        "english": "People are playing in the park."
+      }
+    ]
+  },
+  {
+    "word": "친구",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 친구와 영화를 봤어요.",
+        "english": "I watched a movie with my friend."
+      }
+    ]
+  },
+  {
+    "word": "가족",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 가족과 함께 살아요.",
+        "english": "I live with my family."
+      }
+    ]
+  },
+  {
+    "word": "가격",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 책의 가격은 얼마예요?",
+        "english": "What is the price of this book?"
+      }
+    ]
+  },
+  {
+    "word": "비싸다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 가방은 너무 비싸요.",
+        "english": "This bag is too expensive."
+      }
+    ]
+  },
+  {
+    "word": "싸다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 가방은 정말 싸요.",
+        "english": "This bag is really cheap."
+      }
+    ]
+  },
+  {
+    "word": "현금",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 현금으로 계산했어요.",
+        "english": "I paid with cash."
+      }
+    ]
+  },
+  {
+    "word": "카드",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 카드로 계산했어요.",
+        "english": "I paid with a card."
+      }
+    ]
+  },
+  {
+    "word": "환전",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "공항에서 환전을 했어요.",
+        "english": "I exchanged money at the airport."
+      }
+    ]
+  },
+  {
+    "word": "은행",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 은행에 돈을 맡겼어요.",
+        "english": "I deposited money at the bank."
+      }
+    ]
+  },
+  {
+    "word": "돈",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 돈이 필요해요.",
+        "english": "I need money."
+      }
+    ]
+  },
+  {
+    "word": "식당",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 식당에서 밥을 먹어요.",
+        "english": "I eat rice at the restaurant."
+      }
+    ]
+  },
+  {
+    "word": "음식",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 음식은 정말 맛있어요.",
+        "english": "This food is really delicious."
+      }
+    ]
+  },
+  {
+    "word": "메뉴",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 메뉴를 봅니다.",
+        "english": "I look at the menu."
+      }
+    ]
+  },
+  {
+    "word": "사다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 사과를 샀어요.",
+        "english": "I bought an apple."
+      }
+    ]
+  },
+  {
+    "word": "팔다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그녀는 가게에서 옷을 팝니다.",
+        "english": "She sells clothes at the store."
+      }
+    ]
+  },
+  {
+    "word": "마시다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 물을 마십니다.",
+        "english": "I drink water."
+      }
+    ]
+  },
+  {
+    "word": "먹다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 사과를 먹어요.",
+        "english": "I eat an apple."
+      }
+    ]
+  },
+  {
+    "word": "맛있다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 케이크는 정말 맛있다.",
+        "english": "This cake is really delicious."
+      }
+    ]
+  },
+  {
+    "word": "맛없다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 음식은 맛없어요.",
+        "english": "This food tastes bad."
+      }
+    ]
+  },
+  {
+    "word": "달다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 사과는 매우 달아요.",
+        "english": "This apple is very sweet."
+      }
+    ]
+  },
+  {
+    "word": "짜다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 수프는 너무 짜요.",
+        "english": "This soup is too salty."
+      }
+    ]
+  },
+  {
+    "word": "시다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 레몬은 정말 셔요.",
+        "english": "This lemon is really sour."
+      }
+    ]
+  },
+  {
+    "word": "쓰다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 일기를 씁니다.",
+        "english": "I write a diary."
+      }
+    ]
+  },
+  {
+    "word": "맵다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 김치는 너무 매워요.",
+        "english": "This kimchi is too spicy."
+      }
+    ]
+  },
+  {
+    "word": "차갑다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "물이 차가워요.",
+        "english": "The water is cold."
+      }
+    ]
+  },
+  {
+    "word": "뜨겁다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "커피가 뜨거워요.",
+        "english": "The coffee is hot."
+      }
+    ]
+  },
+  {
+    "word": "커피",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 아침에 커피를 마셔요.",
+        "english": "I drink coffee in the morning."
+      }
+    ]
+  },
+  {
+    "word": "차",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 차를 마셔요.",
+        "english": "I drink tea."
+      }
+    ]
+  },
+  {
+    "word": "물",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 물을 마셔요.",
+        "english": "I drink water."
+      }
+    ]
+  },
+  {
+    "word": "맥주",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 맥주를 마셔요.",
+        "english": "I drink beer."
+      }
+    ]
+  },
+  {
+    "word": "와인",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 저녁에 와인을 마셨어요.",
+        "english": "I drank wine in the evening."
+      }
+    ]
+  },
+  {
+    "word": "소주",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 소주를 마셔요.",
+        "english": "I drink soju."
+      }
+    ]
+  },
+  {
+    "word": "고기",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 고기를 좋아해요.",
+        "english": "I like meat."
+      }
+    ]
+  },
+  {
+    "word": "생선",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 생선을 좋아해요.",
+        "english": "I like fish."
+      }
+    ]
+  },
+  {
+    "word": "채소",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 채소를 좋아해요.",
+        "english": "I like vegetables."
+      }
+    ]
+  },
+  {
+    "word": "과일",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 과일을 좋아해요.",
+        "english": "I like fruit."
+      }
+    ]
+  },
+  {
+    "word": "밥",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 밥을 먹어요.",
+        "english": "I eat rice."
+      }
+    ]
+  },
+  {
+    "word": "빵",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 아침에 빵을 먹어요.",
+        "english": "I eat bread in the morning."
+      }
+    ]
+  },
+  {
+    "word": "국",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "한국은 아름다운 나라입니다.",
+        "english": "Korea is a beautiful country."
+      }
+    ]
+  },
+  {
+    "word": "김치",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 김치를 좋아해요.",
+        "english": "I like kimchi."
+      }
+    ]
+  },
+  {
+    "word": "면",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 매일 아침 면을 먹어요.",
+        "english": "I eat noodles every morning."
+      }
+    ]
+  },
+  {
+    "word": "출발시간",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "기차의 출발시간은 3시입니다.",
+        "english": "The train's departure time is 3 o'clock."
+      }
+    ]
+  },
+  {
+    "word": "도착시간",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "기차의 도착시간은 오후 3시입니다.",
+        "english": "The train's arrival time is 3 PM."
+      }
+    ]
+  },
+  {
+    "word": "정시",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "기차는 정시에 도착했습니다.",
+        "english": "The train arrived on time."
+      }
+    ]
+  },
+  {
+    "word": "연착",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "기차가 연착되어서 늦게 도착했어요.",
+        "english": "The train was delayed, so it arrived late."
+      }
+    ]
+  },
+  {
+    "word": "버스 터미널",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 버스 터미널에서 친구를 만났어요.",
+        "english": "I met my friend at the bus terminal."
+      }
+    ]
+  },
+  {
+    "word": "기차역",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "기차역에서 친구를 만났어요.",
+        "english": "I met my friend at the train station."
+      }
+    ]
+  },
+  {
+    "word": "보도",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "뉴스에서 보도를 봤어요.",
+        "english": "I watched a report on the news."
+      }
+    ]
+  },
+  {
+    "word": "횡단보도",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "횡단보도를 건널 때 조심하세요.",
+        "english": "Be careful when crossing the crosswalk."
+      }
+    ]
+  },
+  {
+    "word": "신호등",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "신호등이 빨간색일 때는 멈추세요.",
+        "english": "Stop when the traffic light is red."
+      }
+    ]
+  },
+  {
+    "word": "길",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 길을 따라 걸어요.",
+        "english": "I walk along the road."
+      }
+    ]
+  },
+  {
+    "word": "도로",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "도로에서 차가 많이 다녀요.",
+        "english": "There are many cars on the road."
+      }
+    ]
+  },
+  {
+    "word": "방향",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 방향을 잃었어요.",
+        "english": "I lost my direction."
+      }
+    ]
+  },
+  {
+    "word": "오른쪽",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "책은 오른쪽에 있어요.",
+        "english": "The book is on the right."
+      }
+    ]
+  },
+  {
+    "word": "왼쪽",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "왼쪽으로 가세요.",
+        "english": "Please go to the left."
+      }
+    ]
+  },
+  {
+    "word": "똑바로",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "길을 똑바로 걸으세요.",
+        "english": "Walk straight on the road."
+      }
+    ]
+  },
+  {
+    "word": "직진",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 길로 직진하세요.",
+        "english": "Go straight on this road."
+      }
+    ]
+  },
+  {
+    "word": "돌다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "고양이가 방 안을 돌아요.",
+        "english": "The cat is walking around the room."
+      }
+    ]
+  },
+  {
+    "word": "건너다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "길을 건너요.",
+        "english": "I cross the street."
+      }
+    ]
+  },
+  {
+    "word": "걷다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 매일 아침에 공원을 걷습니다.",
+        "english": "I walk in the park every morning."
+      }
+    ]
+  },
+  {
+    "word": "타다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 버스를 탔어요.",
+        "english": "I rode the bus."
+      }
+    ]
+  },
+  {
+    "word": "내리다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "비가 내립니다.",
+        "english": "It is raining."
+      }
+    ]
+  },
+  {
+    "word": "기온",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "오늘 기온이 아주 낮아요.",
+        "english": "Today's temperature is very low."
+      }
+    ]
+  },
+  {
+    "word": "날씨",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "오늘 날씨가 좋아요.",
+        "english": "The weather is nice today."
+      }
+    ]
+  },
+  {
+    "word": "맑다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "오늘 하늘이 아주 맑아요.",
+        "english": "The sky is very clear today."
+      }
+    ]
+  },
+  {
+    "word": "흐리다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "오늘 하늘이 흐려요.",
+        "english": "The sky is cloudy today."
+      }
+    ]
+  },
+  {
+    "word": "덥다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "오늘은 너무 덥다.",
+        "english": "Today is very hot."
+      }
+    ]
+  },
+  {
+    "word": "춥다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "오늘은 날씨가 춥다.",
+        "english": "The weather is cold today."
+      }
+    ]
+  },
+  {
+    "word": "비",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "비가 와서 우산이 필요해요.",
+        "english": "It's raining, so I need an umbrella."
+      }
+    ]
+  },
+  {
+    "word": "눈",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "눈이 와요.",
+        "english": "It is snowing."
+      }
+    ]
+  },
+  {
+    "word": "바람",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "바람이 시원해요.",
+        "english": "The wind is cool."
+      }
+    ]
+  },
+  {
+    "word": "우산",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "비가 와서 우산을 썼어요.",
+        "english": "I used an umbrella because it was raining."
+      }
+    ]
+  },
+  {
+    "word": "옷",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 새 옷을 샀어요.",
+        "english": "I bought new clothes."
+      }
+    ]
+  },
+  {
+    "word": "신발",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 새 신발을 샀어요.",
+        "english": "I bought new shoes."
+      }
+    ]
+  },
+  {
+    "word": "모자",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 모자를 썼어요.",
+        "english": "I wore a hat."
+      }
+    ]
+  },
+  {
+    "word": "안경",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "안경을 써요.",
+        "english": "I wear glasses."
+      }
+    ]
+  },
+  {
+    "word": "가게",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 가게에서 사과를 샀어요.",
+        "english": "I bought an apple at the store."
+      }
+    ]
+  },
+  {
+    "word": "백화점",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 주말에 백화점에 갈 거예요.",
+        "english": "I will go to the department store on the weekend."
+      }
+    ]
+  },
+  {
+    "word": "시장",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "어머니는 시장에 가셨어요.",
+        "english": "Mother went to the market."
+      }
+    ]
+  },
+  {
+    "word": "쇼핑",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 주말에 쇼핑을 갑니다.",
+        "english": "I go shopping on the weekend."
+      }
+    ]
+  },
+  {
+    "word": "구매하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 새 책을 구매했어요.",
+        "english": "I bought a new book."
+      }
+    ]
+  },
+  {
+    "word": "선물",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 친구에게 선물을 줬어요.",
+        "english": "I gave a gift to my friend."
+      }
+    ]
+  },
+  {
+    "word": "할인",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 가게에서는 할인이 있어요.",
+        "english": "There is a discount at this store."
+      }
+    ]
+  },
+  {
+    "word": "치수",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 옷의 치수가 맞아요.",
+        "english": "The size of these clothes fits."
+      }
+    ]
+  },
+  {
+    "word": "색상",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 셔츠의 색상이 아주 예뻐요.",
+        "english": "The color of this shirt is very pretty."
+      }
+    ]
+  },
+  {
+    "word": "재고",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "가게에 재고가 많이 남아 있어요.",
+        "english": "There is a lot of stock left in the store."
+      }
+    ]
+  },
+  {
+    "word": "바지",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 새 바지를 샀어요.",
+        "english": "I bought new pants."
+      }
+    ]
+  },
+  {
+    "word": "치마",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그녀는 빨간 치마를 입고 있어요.",
+        "english": "She is wearing a red skirt."
+      }
+    ]
+  },
+  {
+    "word": "셔츠",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 파란 셔츠를 입고 있어요.",
+        "english": "I am wearing a blue shirt."
+      }
+    ]
+  },
+  {
+    "word": "코트",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 새 코트를 샀어요.",
+        "english": "I bought a new coat."
+      }
+    ]
+  },
+  {
+    "word": "재킷",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 빨간 재킷을 입고 있어요.",
+        "english": "I am wearing a red jacket."
+      }
+    ]
+  },
+  {
+    "word": "티셔츠",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 빨간 티셔츠를 입고 있어요.",
+        "english": "I am wearing a red T-shirt."
+      }
+    ]
+  },
+  {
+    "word": "신다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 새 신발을 신었어요.",
+        "english": "I wore new shoes."
+      }
+    ]
+  },
+  {
+    "word": "입다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 옷을 입어요.",
+        "english": "I put on clothes."
+      }
+    ]
+  },
+  {
+    "word": "벗다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "신발을 벗어요.",
+        "english": "Take off your shoes."
+      }
+    ]
+  },
+  {
+    "word": "문",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "문을 열어 주세요.",
+        "english": "Please open the door."
+      }
+    ]
+  },
+  {
+    "word": "창문",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "창문을 열어 주세요.",
+        "english": "Please open the window."
+      }
+    ]
+  },
+  {
+    "word": "벽",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "벽에 그림이 있어요.",
+        "english": "There is a picture on the wall."
+      }
+    ]
+  },
+  {
+    "word": "의자",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "의자가 방에 있어요.",
+        "english": "The chair is in the room."
+      }
+    ]
+  },
+  {
+    "word": "탁자",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "탁자 위에 책이 있어요.",
+        "english": "There is a book on the table."
+      }
+    ]
+  },
+  {
+    "word": "서랍",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "서랍에 양말을 넣었어요.",
+        "english": "I put the socks in the drawer."
+      }
+    ]
+  },
+  {
+    "word": "옷장",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "옷장에 옷을 넣었어요.",
+        "english": "I put clothes in the wardrobe."
+      }
+    ]
+  },
+  {
+    "word": "서다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 버스 정류장에서 섰어요.",
+        "english": "I stood at the bus stop."
+      }
+    ]
+  },
+  {
+    "word": "앉다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "의자에 앉으세요.",
+        "english": "Please sit on the chair."
+      }
+    ]
+  },
+  {
+    "word": "잠자다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 밤에 잠자요.",
+        "english": "I sleep at night."
+      }
+    ]
+  },
+  {
+    "word": "깨어나다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "아침에 일찍 깨어났어요.",
+        "english": "I woke up early in the morning."
+      }
+    ]
+  },
+  {
+    "word": "씻다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 손을 씻어요.",
+        "english": "I wash my hands."
+      }
+    ]
+  },
+  {
+    "word": "목욕하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 저녁에 목욕해요.",
+        "english": "I take a bath in the evening."
+      }
+    ]
+  },
+  {
+    "word": "샤워",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 아침에 샤워를 해요.",
+        "english": "I take a shower in the morning."
+      }
+    ]
+  },
+  {
+    "word": "머리",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 머리를 감아요.",
+        "english": "I wash my hair."
+      }
+    ]
+  },
+  {
+    "word": "손",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "손을 씻으세요.",
+        "english": "Wash your hands."
+      }
+    ]
+  },
+  {
+    "word": "얼굴",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그녀의 얼굴은 아주 예뻐요.",
+        "english": "Her face is very pretty."
+      }
+    ]
+  },
+  {
+    "word": "화장",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 아침에 화장을 해요.",
+        "english": "I put on makeup in the morning."
+      }
+    ]
+  },
+  {
+    "word": "사랑하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 너를 사랑해.",
+        "english": "I love you."
+      }
+    ]
+  },
+  {
+    "word": "좋다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 영화가 정말 좋아요.",
+        "english": "I really like this movie."
+      }
+    ]
+  },
+  {
+    "word": "나쁘다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 음식은 나빠요.",
+        "english": "This food is bad."
+      }
+    ]
+  },
+  {
+    "word": "행복하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 오늘 정말 행복하다.",
+        "english": "I am really happy today."
+      }
+    ]
+  },
+  {
+    "word": "슬프다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그녀는 영화를 보고 슬펐어요.",
+        "english": "She was sad after watching the movie."
+      }
+    ]
+  },
+  {
+    "word": "짜증나다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "날씨가 너무 더워서 짜증나요.",
+        "english": "The weather is so hot, I'm annoyed."
+      }
+    ]
+  },
+  {
+    "word": "무섭다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그 영화는 정말 무서워요.",
+        "english": "That movie is really scary."
+      }
+    ]
+  },
+  {
+    "word": "외롭다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 가끔 외로워요.",
+        "english": "I feel lonely sometimes."
+      }
+    ]
+  },
+  {
+    "word": "놀라다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그녀는 큰 소리에 놀랐어요.",
+        "english": "She was surprised by the loud noise."
+      }
+    ]
+  },
+  {
+    "word": "궁금하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 그 책의 내용이 궁금해요.",
+        "english": "I am curious about the content of that book."
+      }
+    ]
+  },
+  {
+    "word": "기쁘다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "오늘은 기쁜 날이에요.",
+        "english": "Today is a happy day."
+      }
+    ]
+  },
+  {
+    "word": "생일",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "오늘은 제 생일이에요.",
+        "english": "Today is my birthday."
+      }
+    ]
+  },
+  {
+    "word": "매일",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 매일 아침에 커피를 마셔요.",
+        "english": "I drink coffee every morning."
+      }
+    ]
+  },
+  {
+    "word": "요일",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "오늘은 무슨 요일이에요?",
+        "english": "What day of the week is it today?"
+      }
+    ]
+  },
+  {
+    "word": "거울",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "거울을 보세요.",
+        "english": "Look at the mirror."
+      }
+    ]
+  },
+  {
+    "word": "깨끗하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "방이 정말 깨끗해요.",
+        "english": "The room is really clean."
+      }
+    ]
+  },
+  {
+    "word": "더럽다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "방이 너무 더러워요.",
+        "english": "The room is very dirty."
+      }
+    ]
+  },
+  {
+    "word": "좋아하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 아이스크림을 좋아해요.",
+        "english": "I like ice cream."
+      }
+    ]
+  },
+  {
+    "word": "싫어하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 거미를 싫어해요.",
+        "english": "I dislike spiders."
+      }
+    ]
+  },
+  {
+    "word": "만족하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 오늘 저녁에 먹은 음식에 만족해요.",
+        "english": "I am satisfied with the food I ate for dinner today."
+      }
+    ]
+  },
+  {
+    "word": "고프다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 배가 고파요.",
+        "english": "I am hungry."
+      }
+    ]
+  },
+  {
+    "word": "목마르다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 목이 말라요.",
+        "english": "I am thirsty."
+      }
+    ]
+  },
+  {
+    "word": "천천히",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "천천히 걸으세요.",
+        "english": "Walk slowly."
+      }
+    ]
+  },
+  {
+    "word": "빠르다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "토끼는 빨라요.",
+        "english": "The rabbit is fast."
+      }
+    ]
+  },
+  {
+    "word": "다시",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 다시 시도할 거예요.",
+        "english": "I will try again."
+      }
+    ]
+  },
+  {
+    "word": "항상",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 항상 아침에 커피를 마셔요.",
+        "english": "I always drink coffee in the morning."
+      }
+    ]
+  },
+  {
+    "word": "가끔",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "가끔 나는 공원에 가요.",
+        "english": "Sometimes I go to the park."
+      }
+    ]
+  },
+  {
+    "word": "자주",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 자주 공원에 가요.",
+        "english": "I often go to the park."
+      }
+    ]
+  },
+  {
+    "word": "드물게",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그는 드물게 웃어요.",
+        "english": "He rarely smiles."
+      }
+    ]
+  },
+  {
+    "word": "결혼",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그들은 다음 달에 결혼할 거예요.",
+        "english": "They are getting married next month."
+      }
+    ]
+  },
+  {
+    "word": "휴가",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 다음 주에 휴가를 가요.",
+        "english": "I am going on vacation next week."
+      }
+    ]
+  },
+  {
+    "word": "명절",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "명절에는 가족과 함께 시간을 보냅니다.",
+        "english": "During the holidays, I spend time with my family."
+      }
+    ]
+  },
+  {
+    "word": "공휴일",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "오늘은 공휴일이라서 학교에 가지 않아요.",
+        "english": "Today is a public holiday, so I don't go to school."
+      }
+    ]
+  },
+  {
+    "word": "안전하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 헬멧은 매우 안전해요.",
+        "english": "This helmet is very safe."
+      }
+    ]
+  },
+  {
+    "word": "위험하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "길을 건널 때 자동차가 있어서 위험해요.",
+        "english": "It is dangerous because there are cars when crossing the street."
+      }
+    ]
+  },
+  {
+    "word": "친절하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그녀는 항상 친절해요.",
+        "english": "She is always kind."
+      }
+    ]
+  },
+  {
+    "word": "애정",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그녀는 가족에 대한 애정이 깊어요.",
+        "english": "She has deep affection for her family."
+      }
+    ]
+  },
+  {
+    "word": "미워하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그는 나를 미워해요.",
+        "english": "He hates me."
+      }
+    ]
+  },
+  {
+    "word": "조심하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "길을 건널 때 조심하세요.",
+        "english": "Be careful when crossing the street."
+      }
+    ]
+  },
+  {
+    "word": "기억",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 어제의 일을 기억해요.",
+        "english": "I remember what happened yesterday."
+      }
+    ]
+  },
+  {
+    "word": "추억",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "어린 시절의 추억이 많이 생각나요.",
+        "english": "I often think of my childhood memories."
+      }
+    ]
+  },
+  {
+    "word": "바쁘다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 오늘 정말 바빠요.",
+        "english": "I am really busy today."
+      }
+    ]
+  },
+  {
+    "word": "한가하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 주말에 한가해요.",
+        "english": "I am free on the weekend."
+      }
+    ]
+  },
+  {
+    "word": "시계",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "시계가 벽에 걸려 있어요.",
+        "english": "The clock is hanging on the wall."
+      }
+    ]
+  },
+  {
+    "word": "정확하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 정보는 정확하다.",
+        "english": "This information is accurate."
+      }
+    ]
+  },
+  {
+    "word": "받다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 선물을 받았어요.",
+        "english": "I received a gift."
+      }
+    ]
+  },
+  {
+    "word": "보내다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 친구에게 편지를 보냈어요.",
+        "english": "I sent a letter to my friend."
+      }
+    ]
+  },
+  {
+    "word": "전하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "선생님에게 숙제를 전했어요.",
+        "english": "I handed in the homework to the teacher."
+      }
+    ]
+  },
+  {
+    "word": "전화",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 친구에게 전화를 걸었어요.",
+        "english": "I called my friend."
+      }
+    ]
+  },
+  {
+    "word": "이메일",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 이메일을 보냈어요.",
+        "english": "I sent an email."
+      }
+    ]
+  },
+  {
+    "word": "주소",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "여기 제 주소가 있어요.",
+        "english": "Here is my address."
+      }
+    ]
+  },
+  {
+    "word": "번호",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "제 전화번호는 010-1234-5678입니다.",
+        "english": "My phone number is 010-1234-5678."
+      }
+    ]
+  },
+  {
+    "word": "입력",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "컴퓨터에 입력하세요.",
+        "english": "Please enter it into the computer."
+      }
+    ]
+  },
+  {
+    "word": "귀",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그녀는 귀가 아파요.",
+        "english": "She has an earache."
+      }
+    ]
+  },
+  {
+    "word": "코",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "코가 간지러워요.",
+        "english": "My nose is itchy."
+      }
+    ]
+  },
+  {
+    "word": "입",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "입을 크게 벌리세요.",
+        "english": "Open your mouth wide."
+      }
+    ]
+  },
+  {
+    "word": "팔",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 팔에 시계를 찼어요.",
+        "english": "I wore a watch on my arm."
+      }
+    ]
+  },
+  {
+    "word": "다리",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "다리가 아파요.",
+        "english": "My leg hurts."
+      }
+    ]
+  },
+  {
+    "word": "발",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "발이 아파요.",
+        "english": "My foot hurts."
+      }
+    ]
+  },
+  {
+    "word": "배",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 배를 먹고 싶어요.",
+        "english": "I want to eat a pear."
+      }
+    ]
+  },
+  {
+    "word": "등",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "책을 가방에 넣고 등을 돌렸어요.",
+        "english": "I put the book in the bag and turned my back."
+      }
+    ]
+  },
+  {
+    "word": "생각하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 내일의 계획을 생각하고 있어요.",
+        "english": "I am thinking about tomorrow's plans."
+      }
+    ]
+  },
+  {
+    "word": "알다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 그 이야기를 알아요.",
+        "english": "I know that story."
+      }
+    ]
+  },
+  {
+    "word": "모르다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 이 문제를 몰라요.",
+        "english": "I don't know this problem."
+      }
+    ]
+  },
+  {
+    "word": "아프다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 오늘 아파요.",
+        "english": "I am sick today."
+      }
+    ]
+  },
+  {
+    "word": "건강하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "매일 운동하면 건강해져요.",
+        "english": "If you exercise every day, you become healthy."
+      }
+    ]
+  },
+  {
+    "word": "병원",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 아파서 병원에 갔어요.",
+        "english": "I went to the hospital because I was sick."
+      }
+    ]
+  },
+  {
+    "word": "약국",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 약국에서 약을 샀어요.",
+        "english": "I bought medicine at the pharmacy."
+      }
+    ]
+  },
+  {
+    "word": "치과",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 내일 치과에 갈 거예요.",
+        "english": "I will go to the dentist tomorrow."
+      }
+    ]
+  },
+  {
+    "word": "의사",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그는 병원에서 의사로 일합니다.",
+        "english": "He works as a doctor at the hospital."
+      }
+    ]
+  },
+  {
+    "word": "약사",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "약사는 약을 조제합니다.",
+        "english": "The pharmacist prepares medicine."
+      }
+    ]
+  },
+  {
+    "word": "병",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "병에 물을 담았어요.",
+        "english": "I filled the bottle with water."
+      }
+    ]
+  },
+  {
+    "word": "약",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 아침에 약을 먹어요.",
+        "english": "I take medicine in the morning."
+      }
+    ]
+  },
+  {
+    "word": "비상",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "비상시에는 침착해야 합니다.",
+        "english": "In an emergency, you must stay calm."
+      }
+    ]
+  },
+  {
+    "word": "위급",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "위급 상황에서는 침착해야 해요.",
+        "english": "In an emergency situation, you must stay calm."
+      }
+    ]
+  },
+  {
+    "word": "긴급",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "긴급 상황이 발생했습니다.",
+        "english": "An emergency situation has occurred."
+      }
+    ]
+  },
+  {
+    "word": "수술",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그는 내일 수술을 받을 거예요.",
+        "english": "He will have surgery tomorrow."
+      }
+    ]
+  },
+  {
+    "word": "치료",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "의사는 환자를 치료합니다.",
+        "english": "The doctor treats the patient."
+      }
+    ]
+  },
+  {
+    "word": "복용",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "의사는 약을 하루 두 번 복용하라고 했어요.",
+        "english": "The doctor said to take the medicine twice a day."
+      }
+    ]
+  },
+  {
+    "word": "통증",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그녀는 머리에 통증이 있어요.",
+        "english": "She has a pain in her head."
+      }
+    ]
+  },
+  {
+    "word": "감기",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 감기에 걸렸어요.",
+        "english": "I caught a cold."
+      }
+    ]
+  },
+  {
+    "word": "열",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 창문을 열었어요.",
+        "english": "I opened the window."
+      }
+    ]
+  },
+  {
+    "word": "두통",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 두통이 있어요.",
+        "english": "I have a headache."
+      }
+    ]
+  },
+  {
+    "word": "치통",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "치통이 있어서 치과에 갔어요.",
+        "english": "I went to the dentist because I had a toothache."
+      }
+    ]
+  },
+  {
+    "word": "상처",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그녀는 넘어져서 무릎에 상처가 났어요.",
+        "english": "She fell and got a wound on her knee."
+      }
+    ]
+  },
+  {
+    "word": "정신",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그는 정신이 맑아요.",
+        "english": "He has a clear mind."
+      }
+    ]
+  },
+  {
+    "word": "마음",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그녀는 마음이 따뜻해요.",
+        "english": "She has a warm heart."
+      }
+    ]
+  },
+  {
+    "word": "희망",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 희망을 잃지 않아요.",
+        "english": "I do not lose hope."
+      }
+    ]
+  },
+  {
+    "word": "목표",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "제 목표는 한국어를 배우는 것입니다.",
+        "english": "My goal is to learn Korean."
+      }
+    ]
+  },
+  {
+    "word": "꿈",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 어젯밤에 이상한 꿈을 꿨어요.",
+        "english": "I had a strange dream last night."
+      }
+    ]
+  },
+  {
+    "word": "취미",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "제 취미는 음악 듣기입니다.",
+        "english": "My hobby is listening to music."
+      }
+    ]
+  },
+  {
+    "word": "스포츠",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 스포츠를 좋아해요.",
+        "english": "I like sports."
+      }
+    ]
+  },
+  {
+    "word": "음악",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 음악을 듣는 것을 좋아해요.",
+        "english": "I like listening to music."
+      }
+    ]
+  },
+  {
+    "word": "영화",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 영화를 좋아해요.",
+        "english": "I like movies."
+      }
+    ]
+  },
+  {
+    "word": "공연",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "어제 친구와 함께 공연을 봤어요.",
+        "english": "I watched a performance with my friend yesterday."
+      }
+    ]
+  },
+  {
+    "word": "연극",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 친구와 함께 연극을 보러 갔어요.",
+        "english": "I went to see a play with my friend."
+      }
+    ]
+  },
+  {
+    "word": "콘서트",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 내일 콘서트에 갑니다.",
+        "english": "I am going to a concert tomorrow."
+      }
+    ]
+  },
+  {
+    "word": "박물관",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 박물관에 갔어요.",
+        "english": "We went to the museum."
+      }
+    ]
+  },
+  {
+    "word": "미술관",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 주말에 미술관에 갔어요.",
+        "english": "I went to the art museum on the weekend."
+      }
+    ]
+  },
+  {
+    "word": "서점",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 서점에서 책을 샀어요.",
+        "english": "I bought a book at the bookstore."
+      }
+    ]
+  },
+  {
+    "word": "도서관",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 도서관에서 책을 읽어요.",
+        "english": "I read a book at the library."
+      }
+    ]
+  },
+  {
+    "word": "공원",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 공원에서 산책해요.",
+        "english": "I take a walk in the park."
+      }
+    ]
+  },
+  {
+    "word": "산책",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 아침에 산책을 해요.",
+        "english": "I take a walk in the morning."
+      }
+    ]
+  },
+  {
+    "word": "캠핑",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 주말에 캠핑을 가요.",
+        "english": "We are going camping on the weekend."
+      }
+    ]
+  },
+  {
+    "word": "피크닉",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 주말에 공원에서 피크닉을 할 거예요.",
+        "english": "We are going to have a picnic in the park on the weekend."
+      }
+    ]
+  },
+  {
+    "word": "운동",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 매일 아침에 운동을 해요.",
+        "english": "I exercise every morning."
+      }
+    ]
+  },
+  {
+    "word": "자전거",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 자전거를 타고 학교에 가요.",
+        "english": "I ride a bicycle to school."
+      }
+    ]
+  },
+  {
+    "word": "등산",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 주말에 등산을 가요.",
+        "english": "I go hiking on the weekend."
+      }
+    ]
+  },
+  {
+    "word": "수영",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 수영을 배우고 있어요.",
+        "english": "I am learning to swim."
+      }
+    ]
+  },
+  {
+    "word": "경기",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "오늘 축구 경기가 있어요.",
+        "english": "There is a soccer game today."
+      }
+    ]
+  },
+  {
+    "word": "승리",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리 팀이 승리를 했어요.",
+        "english": "Our team won."
+      }
+    ]
+  },
+  {
+    "word": "패배",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리 팀이 경기에서 패배했어요.",
+        "english": "Our team lost the game."
+      }
+    ]
+  },
+  {
+    "word": "보드게임",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 친구들과 보드게임을 합니다.",
+        "english": "I play board games with my friends."
+      }
+    ]
+  },
+  {
+    "word": "게임",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 친구와 게임을 합니다.",
+        "english": "I play a game with my friend."
+      }
+    ]
+  },
+  {
+    "word": "퍼즐",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 퍼즐을 맞추는 것을 좋아해요.",
+        "english": "I like solving puzzles."
+      }
+    ]
+  },
+  {
+    "word": "악기",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 피아노라는 악기를 배워요.",
+        "english": "I am learning an instrument called the piano."
+      }
+    ]
+  },
+  {
+    "word": "노래",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 노래를 좋아해요.",
+        "english": "I like songs."
+      }
+    ]
+  },
+  {
+    "word": "밴드",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 밴드에서 기타를 쳐요.",
+        "english": "I play the guitar in a band."
+      }
+    ]
+  },
+  {
+    "word": "합창단",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 학교 합창단에 가입했어요.",
+        "english": "I joined the school choir."
+      }
+    ]
+  },
+  {
+    "word": "무대",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "가수가 무대에서 노래를 불렀어요.",
+        "english": "The singer sang on the stage."
+      }
+    ]
+  },
+  {
+    "word": "촬영",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 오늘 공원에서 촬영을 했어요.",
+        "english": "We did a photoshoot at the park today."
+      }
+    ]
+  },
+  {
+    "word": "사진",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 사진을 찍어요.",
+        "english": "I take a picture."
+      }
+    ]
+  },
+  {
+    "word": "비디오",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 주말에 비디오를 봐요.",
+        "english": "I watch videos on the weekend."
+      }
+    ]
+  },
+  {
+    "word": "장면",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그 영화의 마지막 장면이 정말 감동적이었어요.",
+        "english": "The last scene of the movie was really touching."
+      }
+    ]
+  },
+  {
+    "word": "디자인",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 가방의 디자인이 정말 예뻐요.",
+        "english": "The design of this bag is really pretty."
+      }
+    ]
+  },
+  {
+    "word": "문학",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 문학 책을 읽는 것을 좋아해요.",
+        "english": "I like reading literature books."
+      }
+    ]
+  },
+  {
+    "word": "회화",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 한국어 회화 수업을 듣고 있어요.",
+        "english": "I am taking a Korean conversation class."
+      }
+    ]
+  },
+  {
+    "word": "조각",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 케이크 한 조각을 먹었어요.",
+        "english": "I ate a piece of cake."
+      }
+    ]
+  },
+  {
+    "word": "예술",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 예술을 좋아해요.",
+        "english": "I like art."
+      }
+    ]
+  },
+  {
+    "word": "혁신",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그 회사는 혁신적인 기술을 개발하고 있습니다.",
+        "english": "The company is developing innovative technology."
+      }
+    ]
+  },
+  {
+    "word": "창조",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그는 새로운 아이디어를 창조했습니다.",
+        "english": "He created a new idea."
+      }
+    ]
+  },
+  {
+    "word": "장난감",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "아이들은 장난감을 가지고 놀아요.",
+        "english": "Children play with toys."
+      }
+    ]
+  },
+  {
+    "word": "어린이",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "어린이는 공원에서 놀고 있어요.",
+        "english": "The child is playing in the park."
+      }
+    ]
+  },
+  {
+    "word": "청소년",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "청소년들은 공원에서 축구를 합니다.",
+        "english": "Teenagers play soccer in the park."
+      }
+    ]
+  },
+  {
+    "word": "어른",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "어른은 아이들을 돌봐야 해요.",
+        "english": "Adults need to take care of children."
+      }
+    ]
+  },
+  {
+    "word": "노인",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그 노인은 공원에서 산책을 합니다.",
+        "english": "The elderly person takes a walk in the park."
+      }
+    ]
+  },
+  {
+    "word": "대중교통",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 대중교통을 자주 이용해요.",
+        "english": "I often use public transportation."
+      }
+    ]
+  },
+  {
+    "word": "자차",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 자차로 회사에 갑니다.",
+        "english": "I go to work by my own car."
+      }
+    ]
+  },
+  {
+    "word": "도보",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 학교까지 도보로 갑니다.",
+        "english": "I go to school on foot."
+      }
+    ]
+  },
+  {
+    "word": "차량",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그녀는 새로운 차량을 샀어요.",
+        "english": "She bought a new vehicle."
+      }
+    ]
+  },
+  {
+    "word": "야외",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 주말에 야외에서 피크닉을 할 거예요.",
+        "english": "We will have a picnic outdoors this weekend."
+      }
+    ]
+  },
+  {
+    "word": "역사",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 역사를 공부해요.",
+        "english": "I study history."
+      }
+    ]
+  },
+  {
+    "word": "문화",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "한국 문화는 매우 흥미로워요.",
+        "english": "Korean culture is very interesting."
+      }
+    ]
+  },
+  {
+    "word": "전통",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "한국의 전통 음식은 김치입니다.",
+        "english": "Korea's traditional food is kimchi."
+      }
+    ]
+  },
+  {
+    "word": "행사",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "학교에서 큰 행사가 열렸어요.",
+        "english": "A big event was held at the school."
+      }
+    ]
+  },
+  {
+    "word": "축제",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 주말에 축제에 갈 거예요.",
+        "english": "We are going to the festival on the weekend."
+      }
+    ]
+  },
+  {
+    "word": "경축",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 결혼식을 경축했습니다.",
+        "english": "We celebrated the wedding."
+      }
+    ]
+  },
+  {
+    "word": "사파리",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 동물원을 방문해서 사파리를 탔어요.",
+        "english": "We visited the zoo and went on a safari."
+      }
+    ]
+  },
+  {
+    "word": "정글",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "정글에는 많은 동물이 살고 있어요.",
+        "english": "Many animals live in the jungle."
+      }
+    ]
+  },
+  {
+    "word": "원주민",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "호주의 원주민들은 고유한 문화를 가지고 있습니다.",
+        "english": "The indigenous people of Australia have a unique culture."
+      }
+    ]
+  },
+  {
+    "word": "동굴",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 동굴 안에서 모험을 했어요.",
+        "english": "We had an adventure inside the cave."
+      }
+    ]
+  },
+  {
+    "word": "해변",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 해변에서 산책했어요.",
+        "english": "We took a walk on the beach."
+      }
+    ]
+  },
+  {
+    "word": "해산물",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 해산물을 좋아해요.",
+        "english": "I like seafood."
+      }
+    ]
+  },
+  {
+    "word": "산호",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "바다에는 아름다운 산호가 많아요.",
+        "english": "There are many beautiful corals in the sea."
+      }
+    ]
+  },
+  {
+    "word": "모래",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "바닷가에 모래가 많아요.",
+        "english": "There is a lot of sand at the beach."
+      }
+    ]
+  },
+  {
+    "word": "바다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 바다에서 수영을 해요.",
+        "english": "I swim in the sea."
+      }
+    ]
+  },
+  {
+    "word": "파도",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "바다에는 큰 파도가 있어요.",
+        "english": "There are big waves in the sea."
+      }
+    ]
+  },
+  {
+    "word": "썰매",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "겨울에 우리는 썰매를 탑니다.",
+        "english": "In winter, we ride a sled."
+      }
+    ]
+  },
+  {
+    "word": "스키",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 겨울에 스키를 타요.",
+        "english": "I ski in the winter."
+      }
+    ]
+  },
+  {
+    "word": "보드",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "보드 게임을 같이 할래요?",
+        "english": "Do you want to play a board game together?"
+      }
+    ]
+  },
+  {
+    "word": "목적지",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 목적지에 도착했어요.",
+        "english": "We have arrived at the destination."
+      }
+    ]
+  },
+  {
+    "word": "비행",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "비행기는 하늘을 날아요.",
+        "english": "The airplane flies in the sky."
+      }
+    ]
+  },
+  {
+    "word": "여정",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "여정은 길고 흥미로웠습니다.",
+        "english": "The journey was long and interesting."
+      }
+    ]
+  },
+  {
+    "word": "숙박",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 호텔에서 숙박했어요.",
+        "english": "We stayed at a hotel."
+      }
+    ]
+  },
+  {
+    "word": "산",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 산에 갑니다.",
+        "english": "I am going to the mountain."
+      }
+    ]
+  },
+  {
+    "word": "강",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "강 옆에서 산책해요.",
+        "english": "I take a walk by the river."
+      }
+    ]
+  },
+  {
+    "word": "호수",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "호수에서 물고기를 잡았어요.",
+        "english": "I caught a fish in the lake."
+      }
+    ]
+  },
+  {
+    "word": "활동",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "주말에 친구와 함께 활동을 했어요.",
+        "english": "I did activities with my friend on the weekend."
+      }
+    ]
+  },
+  {
+    "word": "지도자",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그는 좋은 지도자가 되고 싶어요.",
+        "english": "He wants to become a good leader."
+      }
+    ]
+  },
+  {
+    "word": "모험",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 새로운 모험을 좋아해요.",
+        "english": "I like new adventures."
+      }
+    ]
+  },
+  {
+    "word": "풍경",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이곳의 풍경이 정말 아름다워요.",
+        "english": "The scenery here is really beautiful."
+      }
+    ]
+  },
+  {
+    "word": "자연",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "자연은 아름다워요.",
+        "english": "Nature is beautiful."
+      }
+    ]
+  },
+  {
+    "word": "공기",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "방 안의 공기가 신선해요.",
+        "english": "The air in the room is fresh."
+      }
+    ]
+  },
+  {
+    "word": "산책하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 공원에서 산책해요.",
+        "english": "I take a walk in the park."
+      }
+    ]
+  },
+  {
+    "word": "탐험",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 새로운 동굴을 탐험했어요.",
+        "english": "We explored a new cave."
+      }
+    ]
+  },
+  {
+    "word": "체험",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "박물관에서 체험 활동을 했어요.",
+        "english": "I did an activity at the museum."
+      }
+    ]
+  },
+  {
+    "word": "탐방",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 산을 탐방하러 갈 거예요.",
+        "english": "We are going to explore the mountain."
+      }
+    ]
+  },
+  {
+    "word": "조깅하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "매일 아침에 공원에서 조깅해요.",
+        "english": "I jog in the park every morning."
+      }
+    ]
+  },
+  {
+    "word": "일출",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 아침에 해변에서 일출을 봤어요.",
+        "english": "We watched the sunrise at the beach in the morning."
+      }
+    ]
+  },
+  {
+    "word": "일몰",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "일몰을 보러 해변에 갔어요.",
+        "english": "I went to the beach to watch the sunset."
+      }
+    ]
+  },
+  {
+    "word": "유람선",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 유람선을 타고 강을 건넜어요.",
+        "english": "We took a cruise ship across the river."
+      }
+    ]
+  },
+  {
+    "word": "도보여행",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 주말에 도보여행을 갈 거예요.",
+        "english": "I am going to go hiking this weekend."
+      }
+    ]
+  },
+  {
+    "word": "국내",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 국내 여행을 좋아해요.",
+        "english": "I like traveling domestically."
+      }
+    ]
+  },
+  {
+    "word": "국외",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그는 국외로 여행을 갔어요.",
+        "english": "He went on a trip abroad."
+      }
+    ]
+  },
+  {
+    "word": "편리하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 앱은 정말 편리해요.",
+        "english": "This app is really convenient."
+      }
+    ]
+  },
+  {
+    "word": "불편하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 의자는 불편해요.",
+        "english": "This chair is uncomfortable."
+      }
+    ]
+  },
+  {
+    "word": "쾌적하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 방은 정말 쾌적해요.",
+        "english": "This room is really comfortable."
+      }
+    ]
+  },
+  {
+    "word": "소풍",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 내일 소풍을 갑니다.",
+        "english": "We are going on a picnic tomorrow."
+      }
+    ]
+  },
+  {
+    "word": "휴식",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 주말에 휴식을 취해요.",
+        "english": "I take a rest on the weekend."
+      }
+    ]
+  },
+  {
+    "word": "경치",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "산에 올라가면 경치가 정말 아름다워요.",
+        "english": "When you climb the mountain, the view is really beautiful."
+      }
+    ]
+  },
+  {
+    "word": "절경",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 산의 절경은 정말 아름다워요.",
+        "english": "The scenery of this mountain is really beautiful."
+      }
+    ]
+  },
+  {
+    "word": "독특하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그녀의 옷은 아주 독특하다.",
+        "english": "Her clothes are very unique."
+      }
+    ]
+  },
+  {
+    "word": "체크리스트",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "내일 여행을 위해 체크리스트를 작성했어요.",
+        "english": "I made a checklist for the trip tomorrow."
+      }
+    ]
+  },
+  {
+    "word": "무선",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "무선 인터넷을 사용하고 싶어요.",
+        "english": "I want to use wireless internet."
+      }
+    ]
+  },
+  {
+    "word": "충전기",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "휴대폰 충전기가 필요해요.",
+        "english": "I need a phone charger."
+      }
+    ]
+  },
+  {
+    "word": "가이드북",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 여행을 위해 가이드북을 샀어요.",
+        "english": "I bought a guidebook for the trip."
+      }
+    ]
+  },
+  {
+    "word": "도보맵",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "도보맵을 사용해서 길을 찾았어요.",
+        "english": "I used the walking map to find the way."
+      }
+    ]
+  },
+  {
+    "word": "숙소예약",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 제주도에 숙소예약을 했어요.",
+        "english": "We made a reservation for accommodation in Jeju Island."
+      }
+    ]
+  },
+  {
+    "word": "타이머",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "타이머를 10분으로 설정했어요.",
+        "english": "I set the timer for 10 minutes."
+      }
+    ]
+  },
+  {
+    "word": "인출기",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "은행에서 돈을 인출기로 뽑았어요.",
+        "english": "I withdrew money from the ATM at the bank."
+      }
+    ]
+  },
+  {
+    "word": "선글라스",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 해변에서 선글라스를 썼어요.",
+        "english": "I wore sunglasses at the beach."
+      }
+    ]
+  },
+  {
+    "word": "손전등",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "밤에 손전등을 켜세요.",
+        "english": "Turn on the flashlight at night."
+      }
+    ]
+  },
+  {
+    "word": "멀티탭",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "책상 위에 멀티탭이 있어요.",
+        "english": "There is a power strip on the desk."
+      }
+    ]
+  },
+  {
+    "word": "변압기",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "변압기는 전기를 변환합니다.",
+        "english": "The transformer converts electricity."
+      }
+    ]
+  },
+  {
+    "word": "라텍스",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 장갑은 라텍스로 만들어졌어요.",
+        "english": "These gloves are made of latex."
+      }
+    ]
+  },
+  {
+    "word": "침낭",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 캠핑에 침낭을 가져갔어요.",
+        "english": "We took a sleeping bag for camping."
+      }
+    ]
+  },
+  {
+    "word": "비상약",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 여행할 때 항상 비상약을 가져가요.",
+        "english": "I always take emergency medicine when I travel."
+      }
+    ]
+  },
+  {
+    "word": "포켓지도",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 여행할 때 포켓지도를 사용해요.",
+        "english": "I use a pocket map when I travel."
+      }
+    ]
+  },
+  {
+    "word": "일정",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "내일의 일정은 무엇인가요?",
+        "english": "What is the schedule for tomorrow?"
+      }
+    ]
+  },
+  {
+    "word": "문화유산",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "경주는 한국의 중요한 문화유산이 많습니다.",
+        "english": "Gyeongju has many important cultural heritages in Korea."
+      }
+    ]
+  },
+  {
+    "word": "마케팅",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그 회사는 새로운 마케팅 전략을 세웠어요.",
+        "english": "The company made a new marketing strategy."
+      }
+    ]
+  },
+  {
+    "word": "전통음악",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 전통음악을 듣는 것을 좋아해요.",
+        "english": "I like listening to traditional music."
+      }
+    ]
+  },
+  {
+    "word": "토속음식",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "김치는 한국의 토속음식입니다.",
+        "english": "Kimchi is a traditional Korean food."
+      }
+    ]
+  },
+  {
+    "word": "수제맥주",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 수제맥주를 마셔보고 싶어요.",
+        "english": "I want to try craft beer."
+      }
+    ]
+  },
+  {
+    "word": "카페인",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 카페인이 들어 있는 음료를 마시지 않아요.",
+        "english": "I don't drink beverages that contain caffeine."
+      }
+    ]
+  },
+  {
+    "word": "베이커리",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 아침에 베이커리에 갔어요.",
+        "english": "I went to the bakery in the morning."
+      }
+    ]
+  },
+  {
+    "word": "전망",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 방에는 바다 전망이 있어요.",
+        "english": "This room has an ocean view."
+      }
+    ]
+  },
+  {
+    "word": "일경험",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 일경험을 쌓고 싶어요.",
+        "english": "I want to gain work experience."
+      }
+    ]
+  },
+  {
+    "word": "낯선곳",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "낯선곳에 가는 것은 흥미로워요.",
+        "english": "Going to an unfamiliar place is exciting."
+      }
+    ]
+  },
+  {
+    "word": "법규",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "교통 법규를 지켜야 합니다.",
+        "english": "You must follow traffic regulations."
+      }
+    ]
+  },
+  {
+    "word": "관습",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "한국의 전통 관습을 배우고 싶어요.",
+        "english": "I want to learn about traditional Korean customs."
+      }
+    ]
+  },
+  {
+    "word": "독립",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 독립해서 살고 싶어요.",
+        "english": "I want to live independently."
+      }
+    ]
+  },
+  {
+    "word": "모험심",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그는 모험심이 강해요.",
+        "english": "He has a strong sense of adventure."
+      }
+    ]
+  },
+  {
+    "word": "낯설다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 도시는 나에게 낯설어요.",
+        "english": "This city is unfamiliar to me."
+      }
+    ]
+  },
+  {
+    "word": "중독",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그 게임은 정말 중독성이 강해요.",
+        "english": "That game is really addictive."
+      }
+    ]
+  },
+  {
+    "word": "극복",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그는 어려움을 극복했습니다.",
+        "english": "He overcame the difficulties."
+      }
+    ]
+  },
+  {
+    "word": "도전정신",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그는 도전정신이 강한 사람입니다.",
+        "english": "He is a person with a strong spirit of challenge."
+      }
+    ]
+  },
+  {
+    "word": "성취감",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "열심히 공부해서 성취감을 느꼈어요.",
+        "english": "I felt a sense of accomplishment after studying hard."
+      }
+    ]
+  },
+  {
+    "word": "해외여행",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 내년에 해외여행을 가고 싶어요.",
+        "english": "I want to go on an overseas trip next year."
+      }
+    ]
+  },
+  {
+    "word": "국내여행",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이번 주말에 우리는 국내여행을 갈 거예요.",
+        "english": "This weekend, we are going on a domestic trip."
+      }
+    ]
+  },
+  {
+    "word": "안내",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "안내 데스크에서 정보를 받을 수 있어요.",
+        "english": "You can get information at the information desk."
+      }
+    ]
+  },
+  {
+    "word": "안전벨트",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "차에 타면 안전벨트를 매세요.",
+        "english": "When you get in the car, fasten your seatbelt."
+      }
+    ]
+  },
+  {
+    "word": "반려동물",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 반려동물을 키우고 있어요.",
+        "english": "I have a pet."
+      }
+    ]
+  },
+  {
+    "word": "유아용품",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "유아용품 가게에서 장난감을 샀어요.",
+        "english": "I bought a toy at the baby products store."
+      }
+    ]
+  },
+  {
+    "word": "기념품",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 여행에서 기념품을 샀어요.",
+        "english": "I bought a souvenir from the trip."
+      }
+    ]
+  },
+  {
+    "word": "정전",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "정전 때문에 불이 꺼졌어요.",
+        "english": "The lights went out because of the power outage."
+      }
+    ]
+  },
+  {
+    "word": "창조적",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그녀는 창조적인 아이디어를 많이 가지고 있어요.",
+        "english": "She has many creative ideas."
+      }
+    ]
+  },
+  {
+    "word": "매력적",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그 배우는 정말 매력적이에요.",
+        "english": "That actor is really attractive."
+      }
+    ]
+  },
+  {
+    "word": "휴대용",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 휴대용 충전기는 정말 편리해요.",
+        "english": "This portable charger is really convenient."
+      }
+    ]
+  },
+  {
+    "word": "도큐먼트",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 도큐먼트를 작성하고 있어요.",
+        "english": "I am writing a document."
+      }
+    ]
+  },
+  {
+    "word": "회신",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "회의에 참석한 후에 회신을 보냈습니다.",
+        "english": "I sent a reply after attending the meeting."
+      }
+    ]
+  },
+  {
+    "word": "동전",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 동전을 모아요.",
+        "english": "I collect coins."
+      }
+    ]
+  },
+  {
+    "word": "수화물",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "수화물을 공항에서 찾았어요.",
+        "english": "I picked up my luggage at the airport."
+      }
+    ]
+  },
+  {
+    "word": "탑승구",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "탑승구에서 비행기를 기다려요.",
+        "english": "I am waiting for the airplane at the boarding gate."
+      }
+    ]
+  },
+  {
+    "word": "기내식",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "비행기에서 기내식을 먹었어요.",
+        "english": "I ate an in-flight meal on the airplane."
+      }
+    ]
+  },
+  {
+    "word": "자연환경",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "자연환경을 보호하는 것이 중요합니다.",
+        "english": "It is important to protect the natural environment."
+      }
+    ]
+  },
+  {
+    "word": "특산물",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "제주도의 특산물은 감귤이에요.",
+        "english": "Jeju Island's specialty product is tangerines."
+      }
+    ]
+  },
+  {
+    "word": "침대시트",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "침대시트를 깔아 주세요.",
+        "english": "Please put on the bed sheet."
+      }
+    ]
+  },
+  {
+    "word": "감성여행",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 주말에 감성여행을 떠날 거예요.",
+        "english": "We are going on an emotional trip this weekend."
+      }
+    ]
+  },
+  {
+    "word": "들르다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "퇴근길에 친구 집에 잠깐 들렀어요.",
+        "english": "I stopped by my friend's house on the way home from work."
+      }
+    ]
+  },
+  {
+    "word": "촬영금지",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "여기에서는 촬영금지입니다.",
+        "english": "Filming is prohibited here."
+      }
+    ]
+  },
+  {
+    "word": "매점",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "학교 매점에서 과자를 샀어요.",
+        "english": "I bought snacks at the school store."
+      }
+    ]
+  },
+  {
+    "word": "스토리",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그 영화의 스토리가 재미있어요.",
+        "english": "The story of that movie is interesting."
+      }
+    ]
+  },
+  {
+    "word": "공예품",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 가게에는 아름다운 공예품이 많아요.",
+        "english": "This store has many beautiful crafts."
+      }
+    ]
+  },
+  {
+    "word": "복지시설",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그 도시는 많은 복지시설을 가지고 있어요.",
+        "english": "The city has many welfare facilities."
+      }
+    ]
+  },
+  {
+    "word": "문화재",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "한국에는 많은 문화재가 있습니다.",
+        "english": "There are many cultural assets in Korea."
+      }
+    ]
+  },
+  {
+    "word": "언어장벽",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "언어장벽 때문에 소통이 어려워요.",
+        "english": "Communication is difficult because of the language barrier."
+      }
+    ]
+  },
+  {
+    "word": "장소",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 장소는 정말 아름다워요.",
+        "english": "This place is really beautiful."
+      }
+    ]
+  },
+  {
+    "word": "기후",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "기후가 따뜻해졌어요.",
+        "english": "The climate has become warm."
+      }
+    ]
+  },
+  {
+    "word": "출판물",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 출판물은 매우 유익해요.",
+        "english": "This publication is very informative."
+      }
+    ]
+  },
+  {
+    "word": "향신료",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 요리에 향신료를 조금 넣으세요.",
+        "english": "Add a little spice to this dish."
+      }
+    ]
+  },
+  {
+    "word": "물가",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "물가가 많이 올랐어요.",
+        "english": "The prices have gone up a lot."
+      }
+    ]
+  },
+  {
+    "word": "간식",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 오후에 간식을 먹어요.",
+        "english": "I eat a snack in the afternoon."
+      }
+    ]
+  },
+  {
+    "word": "명소",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "서울에는 많은 명소가 있습니다.",
+        "english": "There are many famous places in Seoul."
+      }
+    ]
+  },
+  {
+    "word": "모집",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리 회사는 새로운 직원을 모집하고 있어요.",
+        "english": "Our company is recruiting new employees."
+      }
+    ]
+  },
+  {
+    "word": "알림",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "휴대폰에 알림이 왔어요.",
+        "english": "A notification came on my phone."
+      }
+    ]
+  },
+  {
+    "word": "계산대",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "계산대에서 돈을 냈어요.",
+        "english": "I paid at the checkout counter."
+      }
+    ]
+  },
+  {
+    "word": "결과물",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "결과물이 아주 좋습니다.",
+        "english": "The result is very good."
+      }
+    ]
+  },
+  {
+    "word": "거래",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 좋은 거래를 했어요.",
+        "english": "We made a good deal."
+      }
+    ]
+  },
+  {
+    "word": "집합",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "학생들이 운동장에 집합했습니다.",
+        "english": "The students gathered in the playground."
+      }
+    ]
+  },
+  {
+    "word": "휴게소",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 고속도로 휴게소에서 점심을 먹었어요.",
+        "english": "We ate lunch at the rest stop on the highway."
+      }
+    ]
+  },
+  {
+    "word": "회관",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 회관은 매우 큽니다.",
+        "english": "This hall is very big."
+      }
+    ]
+  },
+  {
+    "word": "여럿",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "여럿이 모여서 영화를 봤어요.",
+        "english": "Several people gathered to watch a movie."
+      }
+    ]
+  },
+  {
+    "word": "아티스트",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그는 유명한 아티스트입니다.",
+        "english": "He is a famous artist."
+      }
+    ]
+  },
+  {
+    "word": "보안검사",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "공항에서 보안검사를 받아야 해요.",
+        "english": "You have to go through a security check at the airport."
+      }
+    ]
+  },
+  {
+    "word": "부서",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리 부서는 매주 월요일에 회의를 합니다.",
+        "english": "Our department has a meeting every Monday."
+      }
+    ]
+  },
+  {
+    "word": "후원",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 친구의 프로젝트를 후원했어요.",
+        "english": "I supported my friend's project."
+      }
+    ]
+  },
+  {
+    "word": "의복",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 새 의복을 샀어요.",
+        "english": "I bought new clothes."
+      }
+    ]
+  },
+  {
+    "word": "세계적",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "방탄소년단은 세계적으로 유명합니다.",
+        "english": "BTS is famous worldwide."
+      }
+    ]
+  },
+  {
+    "word": "신선하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 과일은 정말 신선해요.",
+        "english": "This fruit is really fresh."
+      }
+    ]
+  },
+  {
+    "word": "익숙하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 한국 음식에 익숙해졌어요.",
+        "english": "I have become accustomed to Korean food."
+      }
+    ]
+  },
+  {
+    "word": "상점",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 상점에서 사과를 샀어요.",
+        "english": "I bought apples at the store."
+      }
+    ]
+  },
+  {
+    "word": "신기하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 마술은 정말 신기하다.",
+        "english": "This magic trick is really amazing."
+      }
+    ]
+  },
+  {
+    "word": "알림판",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "학교에 새로운 알림판이 생겼어요.",
+        "english": "A new bulletin board has been set up at the school."
+      }
+    ]
+  },
+  {
+    "word": "포스터",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "벽에 포스터를 붙였어요.",
+        "english": "I put a poster on the wall."
+      }
+    ]
+  },
+  {
+    "word": "감각적",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 그림은 매우 감각적이에요.",
+        "english": "This painting is very sensory."
+      }
+    ]
+  },
+  {
+    "word": "염색",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 머리를 염색했어요.",
+        "english": "I dyed my hair."
+      }
+    ]
+  },
+  {
+    "word": "발견",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "새로운 식당을 발견했어요.",
+        "english": "I discovered a new restaurant."
+      }
+    ]
+  },
+  {
+    "word": "새상품",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 가게에는 새상품이 많아요.",
+        "english": "This store has many new products."
+      }
+    ]
+  },
+  {
+    "word": "견학",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리 반은 박물관으로 견학을 갑니다.",
+        "english": "Our class is going on a field trip to the museum."
+      }
+    ]
+  },
+  {
+    "word": "본부",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "회사의 본부는 서울에 있습니다.",
+        "english": "The company's headquarters is in Seoul."
+      }
+    ]
+  },
+  {
+    "word": "접근",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그 도서관은 접근하기 쉬워요.",
+        "english": "The library is easy to access."
+      }
+    ]
+  },
+  {
+    "word": "카드키",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "호텔 방에 들어가려면 카드키가 필요해요.",
+        "english": "You need a key card to enter the hotel room."
+      }
+    ]
+  },
+  {
+    "word": "출입권",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "영화관에 들어가기 위해 출입권이 필요해요.",
+        "english": "You need a ticket to enter the movie theater."
+      }
+    ]
+  },
+  {
+    "word": "태블릿",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 태블릿으로 책을 읽어요.",
+        "english": "I read books on the tablet."
+      }
+    ]
+  },
+  {
+    "word": "수심",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "수심이 깊은 강에서 수영하지 마세요.",
+        "english": "Do not swim in a river with deep water."
+      }
+    ]
+  },
+  {
+    "word": "다기능",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 휴대폰은 다기능이에요.",
+        "english": "This phone is multifunctional."
+      }
+    ]
+  },
+  {
+    "word": "휴양지",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "여름에 우리는 휴양지로 여행을 갈 거예요.",
+        "english": "In the summer, we will travel to a resort."
+      }
+    ]
+  },
+  {
+    "word": "캠페인",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "학교에서 환경 보호 캠페인을 시작했어요.",
+        "english": "The school started an environmental protection campaign."
+      }
+    ]
+  },
+  {
+    "word": "보전",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "환경 보전은 중요합니다.",
+        "english": "Conservation of the environment is important."
+      }
+    ]
+  },
+  {
+    "word": "마을",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그 마을은 아주 작아요.",
+        "english": "The village is very small."
+      }
+    ]
+  },
+  {
+    "word": "할당량",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "오늘의 할당량을 다 끝냈어요.",
+        "english": "I finished today's quota."
+      }
+    ]
+  },
+  {
+    "word": "온천",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 주말에 온천에 갈 거예요.",
+        "english": "We will go to the hot spring on the weekend."
+      }
+    ]
+  },
+  {
+    "word": "자연경관",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "제주도는 아름다운 자연경관이 많아요.",
+        "english": "Jeju Island has many beautiful natural landscapes."
+      }
+    ]
+  },
+  {
+    "word": "해설사",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "해설사는 박물관에서 안내해 줍니다.",
+        "english": "The guide explains things at the museum."
+      }
+    ]
+  },
+  {
+    "word": "가정식",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 가정식을 좋아해요.",
+        "english": "I like homemade meals."
+      }
+    ]
+  },
+  {
+    "word": "주차료",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "주차료가 얼마예요?",
+        "english": "How much is the parking fee?"
+      }
+    ]
+  },
+  {
+    "word": "결정",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 내일 무엇을 할지 결정했어요.",
+        "english": "I have decided what to do tomorrow."
+      }
+    ]
+  },
+  {
+    "word": "경유지",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "우리는 경유지에서 잠시 멈췄어요.",
+        "english": "We stopped briefly at the stopover."
+      }
+    ]
+  },
+  {
+    "word": "환경",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "환경을 보호해야 해요.",
+        "english": "We must protect the environment."
+      }
+    ]
+  },
+  {
+    "word": "교류",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "한국과 일본은 문화 교류를 합니다.",
+        "english": "Korea and Japan have cultural exchanges."
+      }
+    ]
+  },
+  {
+    "word": "미사용",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "이 카드는 미사용 상태입니다.",
+        "english": "This card is unused."
+      }
+    ]
+  },
+  {
+    "word": "월드컵",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "나는 월드컵 경기를 보고 싶어요.",
+        "english": "I want to watch the World Cup match."
+      }
+    ]
+  },
+  {
+    "word": "조언",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 친구에게 조언을 받았어요.",
+        "english": "I received advice from a friend."
+      }
+    ]
+  },
+  {
+    "word": "서울",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 서울에 살아요.",
+        "english": "I live in Seoul."
+      }
+    ]
+  },
+  {
+    "word": "부산",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 부산에 가고 싶어요.",
+        "english": "I want to go to Busan."
+      }
+    ]
+  },
+  {
+    "word": "인천",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "인천은 한국의 도시입니다.",
+        "english": "Incheon is a city in Korea."
+      }
+    ]
+  },
+  {
+    "word": "대구",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "대구는 한국의 도시입니다.",
+        "english": "Daegu is a city in Korea."
+      }
+    ]
+  },
+  {
+    "word": "대전",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 대전에 살아요.",
+        "english": "I live in Daejeon."
+      }
+    ]
+  },
+  {
+    "word": "광주",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "광주는 한국의 도시입니다.",
+        "english": "Gwangju is a city in Korea."
+      }
+    ]
+  },
+  {
+    "word": "울산",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "울산은 한국의 도시입니다.",
+        "english": "Ulsan is a city in Korea."
+      }
+    ]
+  },
+  {
+    "word": "수원",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "수원에 가고 싶어요.",
+        "english": "I want to go to Suwon."
+      }
+    ]
+  },
+  {
+    "word": "제주",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "제주도는 아름다운 섬이에요.",
+        "english": "Jeju Island is a beautiful island."
+      }
+    ]
+  },
+  {
+    "word": "경주",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "경주는 한국의 아름다운 도시입니다.",
+        "english": "Gyeongju is a beautiful city in Korea."
+      }
+    ]
+  },
+  {
+    "word": "전주",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "전주는 한국의 아름다운 도시입니다.",
+        "english": "Jeonju is a beautiful city in Korea."
+      }
+    ]
+  },
+  {
+    "word": "환불",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 가게에서 환불을 받았어요.",
+        "english": "I got a refund at the store."
+      }
+    ]
+  },
+  {
+    "word": "영수증",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "가게에서 영수증을 받았어요.",
+        "english": "I received a receipt at the store."
+      }
+    ]
+  },
+  {
+    "word": "계산서",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "계산서를 주세요.",
+        "english": "Please give me the bill."
+      }
+    ]
+  },
+  {
+    "word": "주문하다",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 피자를 주문했어요.",
+        "english": "I ordered a pizza."
+      }
+    ]
+  },
+  {
+    "word": "비자",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "저는 비자를 신청했어요.",
+        "english": "I applied for a visa."
+      }
+    ]
+  },
+  {
+    "word": "경찰서",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "그는 경찰서에 갔어요.",
+        "english": "He went to the police station."
+      }
+    ]
+  },
+  {
+    "word": "소방서",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "불이 나면 소방서에 전화하세요.",
+        "english": "If there is a fire, call the fire station."
+      }
+    ]
+  },
+  {
+    "word": "구급차",
+    "meaning": "",
+    "sentences": [
+      {
+        "korean": "구급차가 병원으로 환자를 데려갔어요.",
+        "english": "The ambulance took the patient to the hospital."
+      }
+    ]
+  }
+]
