@@ -54,9 +54,11 @@ export const getVocabularies = async (): Promise<Vocabulary[]> => {
         eng: engMeaning,
         priority: data.priority ?? 99,
         pronunciation: data.pronunciation || '',
+        partOfSpeech: data.partOfSpeech || '',
         category: data.category || '',
         meaning: data.meaning || '',
         examples: examples,
+        imageUrl: data.imageUrl || '',
       };
       
       vocabularies.push(vocabulary);

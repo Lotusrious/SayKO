@@ -7,6 +7,7 @@ export interface Vocabulary {
   eng: string; // 영어 번역 (Firestore의 'meaning' 객체 또는 문자열에서 매핑됨)
   priority: number; // 학습 우선순위
   pronunciation?: string; // 발음
+  partOfSpeech?: string; // 품사
   category?: string; // 카테고리
   examples: Example[]; // 예문 배열 (Firestore의 'examples' 또는 'sentences'에서 매핑됨)
   imageUrl?: string; // 선택적 속성으로 imageUrl 추가

@@ -92,7 +92,7 @@ const LandingPage = () => {
   const handleLogin = async () => {
     try {
       await loginWithGoogle();
-      navigate('/learn');
+      navigate('/');
     } catch (error) {
       console.error("Login failed:", error);
       alert("Login failed. Please try again.");

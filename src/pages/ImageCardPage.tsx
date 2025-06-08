@@ -76,9 +76,14 @@ const ImageCardPage: React.FC = () => {
             
             <h2 className="text-4xl font-bold mb-4">{currentWord.kor}</h2>
             
-            <div className="h-12">
+            <div className="h-12 flex flex-col items-center justify-center">
               {isRevealed && (
-                <p className="text-2xl text-gray-300 animate-fade-in">{currentWord.eng}</p>
+                <div className="animate-fade-in">
+                  <p className="text-2xl text-gray-300">{currentWord.eng}</p>
+                  {currentWord.partOfSpeech && (
+                    <p className="text-lg text-gray-400 italic mt-1">{currentWord.partOfSpeech}</p>
+                  )}
+                </div>
               )}
             </div>
           </div>

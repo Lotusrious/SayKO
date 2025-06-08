@@ -7,7 +7,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { format } from 'date-fns-tz';
 import { getVocabularies, CYCLE_CONFIG } from '../services/vocabularyService';
 import { getTestResultsForUser } from '../services/userService';
-import type { TestResult, TestAnswer as WordResult } from '../types/firestore.d';
+import type { TestResult, TestAnswer } from '../types/firestore.d';
 
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
@@ -238,7 +238,7 @@ const MyPage: React.FC = () => {
                             </tr>
                           </thead>
                           <tbody>
-                            {result.results.map((wordResult: WordResult, wordIndex) => (
+                            {result.results.map((wordResult: TestAnswer, wordIndex) => (
                               <tr 
                                 key={wordIndex} 
                                 className={`border-t ${wordResult.isCorrect ? 'bg-green-50/50' : 'bg-red-50/50'}`}
@@ -250,8 +250,8 @@ const MyPage: React.FC = () => {
                                     <svg className="w-6 h-6 text-red-500 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                                   )}
                                 </td>
-                                <td className="p-3 font-semibold">{wordResult.word}</td>
-                                <td className="p-3">{wordResult.correctAnswer}</td>
+                                <td className="p-3 font-semibold">{wordResult.kor}</td>
+                                <td className="p-3">{wordResult.eng}</td>
                                 <td className="p-3">{wordResult.userAnswer}</td>
                               </tr>
                             ))}
@@ -260,13 +260,13 @@ const MyPage: React.FC = () => {
 
                         {/* Mobile View (below md size) */}
                         <div className="grid grid-cols-1 gap-4 md:hidden mt-4">
-                          {result.results.map((wordResult: WordResult, wordIndex) => (
+                          {result.results.map((wordResult: TestAnswer, wordIndex) => (
                             <div 
                               key={wordIndex}
                               className={`p-4 rounded-lg ${wordResult.isCorrect ? 'bg-green-50' : 'bg-red-50'}`}
                             >
                               <div className="flex items-center justify-between mb-3">
-                                <p className="font-bold text-lg text-gray-800">{wordResult.word}</p>
+                                <p className="font-bold text-lg text-gray-800">{wordResult.kor}</p>
                                 {wordResult.isCorrect ? (
                                   <span className="text-sm font-bold text-green-600">Correct</span>
                                 ) : (
@@ -275,7 +275,7 @@ const MyPage: React.FC = () => {
                               </div>
                               <div className="space-y-1 text-sm">
                                 <p><span className="font-semibold text-gray-600">Your Answer:</span> {wordResult.userAnswer || 'N/A'}</p>
-                                <p><span className="font-semibold text-gray-600">Correct Answer:</span> {wordResult.correctAnswer}</p>
+                                <p><span className="font-semibold text-gray-600">Correct Answer:</span> {wordResult.eng}</p>
                               </div>
                             </div>
                           ))}
