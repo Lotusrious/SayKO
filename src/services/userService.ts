@@ -1,7 +1,8 @@
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase';
-import type { User } from '../types/firestore';
+import type { User, TestResult } from '../types/firestore';
 import type { User as AuthUser } from 'firebase/auth';
+import { collection, query, getDocs, where } from 'firebase/firestore';
 
 /**
  * Firestore에서 사용자 데이터를 가져오거나, 없는 경우 새로 생성합니다.
@@ -43,4 +44,24 @@ export const getUserData = async (user: AuthUser): Promise<User> => {
 export const updateUserData = async (uid: string, data: Partial<User>): Promise<void> => {
   const userRef = doc(db, 'users', uid);
   await setDoc(userRef, data, { merge: true }); // merge: true로 기존 데이터를 보존합니다.
+};
+
+/**
+ * 특정 사용자의 모든 시험 결과를 Firestore에서 가져옵니다.
+ * @param uid - 사용자 UID
+ * @returns {Promise<TestResult[]>} 시험 결과 배열
+ */
+export const getTestResultsForUser = async (uid: string): Promise<TestResult[]> => {
+  const testResultsRef = collection(db, 'users', uid, 'testResults');
+  const q = query(testResultsRef);
+  const querySnapshot = await getDocs(q);
+  
+  const results = querySnapshot.docs
+    .map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    } as TestResult))
+    .filter(result => result.createdAt && typeof result.createdAt.toDate === 'function');
+
+  return results;
 }; 

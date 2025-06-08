@@ -53,7 +53,7 @@ export interface TestResult {
   day: number;
   results: TestAnswer[];
   score: number;
-  createdAt: Date;
+  createdAt: Timestamp;
   stageAdvanced?: boolean;
   isFreeTest?: boolean; // 자유 시험 여부
 }

@@ -4,38 +4,21 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './MyPage.css'; // 커스텀 CSS 파일 임포트
 import { useAuth } from '../contexts/AuthContext';
-import { db } from '../firebase';
-import { collection, query, getDocs, Timestamp } from 'firebase/firestore';
+import { Timestamp } from 'firebase/firestore';
 import { format } from 'date-fns-tz';
 import { getVocabularies, CYCLE_CONFIG } from '../services/vocabularyService';
-
-// 시험 결과 데이터 타입을 정의합니다.
-interface WordResult {
-  kor: string;
-  eng: string;
-  userAnswer: string;
-  isCorrect: boolean;
-  wordId: string;
-}
-
-interface TestResult {
-  id: string;
-  cycle: number;
-  day: number;
-  score: number;
-  createdAt: Timestamp;
-  results: WordResult[];
-}
+import { getTestResultsForUser } from '../services/userService';
+import type { TestResult, TestAnswer as WordResult } from '../types/firestore.d';
 
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 /**
- * 간단한 마이페이지 컴포넌트
+ * 마이페이지 컴포넌트
  */
 const MyPage: React.FC = () => {
   const { currentUser, dbUser, loading } = useAuth();
-  const location = useLocation(); // 라우터의 위치 정보를 가져옵니다.
+  const location = useLocation();
   const [value, onChange] = useState<Value>(new Date());
   const [allTestResults, setAllTestResults] = useState<TestResult[]>([]);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -60,38 +43,32 @@ const MyPage: React.FC = () => {
       // 지난 사이클에서 학습한 단어 수
       for (let i = 1; i < currentCycle; i++) {
         const cycleConfig = CYCLE_CONFIG[i];
-        learnedWords += cycleConfig.wordsPerDay * cycleConfig.duration;
+        if (cycleConfig) {
+          learnedWords += cycleConfig.wordsPerDay * cycleConfig.duration;
+        }
       }
       
       // 현재 사이클에서 (어제까지) 학습한 단어 수
       const currentCycleConfig = CYCLE_CONFIG[currentCycle];
-      learnedWords += currentCycleConfig.wordsPerDay * (currentDay - 1);
+      if (currentCycleConfig) {
+        learnedWords += currentCycleConfig.wordsPerDay * (currentDay - 1);
+      }
 
       const rate = Math.round((learnedWords / totalWords) * 100);
       setCompletionRate(rate);
     };
 
-    calculateCompletion();
+    if(dbUser) {
+      calculateCompletion();
+    }
   }, [dbUser]);
 
-  // location이 변경될 때마다 데이터를 다시 불러옵니다.
+  // Firestore에서 시험 결과 데이터를 가져옵니다.
   useEffect(() => {
     const fetchTestResults = async () => {
       if (currentUser) {
-        console.log("MyPage: Fetching test results for user:", currentUser.uid);
         try {
-          const q = query(collection(db, 'users', currentUser.uid, 'testResults'));
-          const querySnapshot = await getDocs(q);
-          console.log("MyPage: Fetched documents count:", querySnapshot.size);
-
-          const results = querySnapshot.docs
-            .map(doc => ({
-              id: doc.id,
-              ...doc.data()
-            } as TestResult))
-            .filter(result => result.createdAt && typeof result.createdAt.toDate === 'function');
-
-          console.log("MyPage: Processed test results array:", results);
+          const results = await getTestResultsForUser(currentUser.uid);
           setAllTestResults(results);
         } catch (error) {
           console.error("시험 기록을 불러오는 데 실패했습니다:", error);
@@ -100,7 +77,7 @@ const MyPage: React.FC = () => {
     };
 
     fetchTestResults();
-  }, [currentUser, location]); // location을 의존성 배열에 추가
+  }, [currentUser, location]);
 
   if (loading) {
     return (
@@ -110,14 +87,14 @@ const MyPage: React.FC = () => {
     );
   }
   
-  // Date 객체를 'yyyy-MM-dd' 형식의 KST 문자열로 변환하는 단일 함수
   const getKST_YYYY_MM_DD = (date: Date): string => {
     return format(date, 'yyyy-MM-dd', { timeZone: KST_TIMEZONE });
   }
 
-  // 날짜별 시험 정보(시험 유무, 100점 통과 유무)를 미리 계산합니다.
+  // 달력에 점을 표시하기 위해 날짜별 시험 정보를 미리 계산합니다.
   const testDayInfo = allTestResults.reduce((acc, result) => {
-    const dateStr = getKST_YYYY_MM_DD(result.createdAt.toDate());
+    const date = result.createdAt.toDate();
+    const dateStr = getKST_YYYY_MM_DD(date);
     if (!acc[dateStr]) {
       acc[dateStr] = { hasTest: true, hasPerfectScore: false };
     }
@@ -127,17 +104,19 @@ const MyPage: React.FC = () => {
     return acc;
   }, {} as Record<string, { hasTest: boolean; hasPerfectScore: boolean }>);
 
+  // 달력 날짜 클릭 핸들러
   const handleDateClick = (date: Date) => {
     setSelectedDate(date);
     const formattedClickedDate = getKST_YYYY_MM_DD(date);
     const filteredResults = allTestResults
       .filter(result => {
-        const formattedResultDate = getKST_YYYY_MM_DD(result.createdAt.toDate());
+        const resultDate = result.createdAt.toDate();
+        const formattedResultDate = getKST_YYYY_MM_DD(resultDate);
         return formattedResultDate === formattedClickedDate;
       })
       .sort((a, b) => a.createdAt.toMillis() - b.createdAt.toMillis());
     setResultsForSelectedDate(filteredResults);
-    setExpandedResultId(null); // 날짜를 새로 클릭하면 펼쳐진 결과를 닫습니다.
+    setExpandedResultId(null);
   };
 
   return (
@@ -247,38 +226,73 @@ const MyPage: React.FC = () => {
                     </div>
                     {expandedResultId === result.id && (
                       <div className="result-details">
-                        <table className="w-full">
+                        {/* === 반응형 결과 표시: 데스크탑에서는 테이블, 모바일에서는 카드 === */}
+
+                        {/* 데스크탑 뷰 (md 사이즈 이상) */}
+                        <table className="w-full hidden md:table">
                           <thead>
-                            <tr>
-                              <th>결과</th>
-                              <th>단어</th>
-                              <th>정답</th>
-                              <th>내 답변</th>
+                            <tr className="text-left text-sm text-gray-500">
+                              <th className="p-3 font-medium text-center">결과</th>
+                              <th className="p-3 font-medium">단어</th>
+                              <th className="p-3 font-medium">정답</th>
+                              <th className="p-3 font-medium">내 답</th>
                             </tr>
                           </thead>
                           <tbody>
-                            {result.results.map((wordRes, wordIndex) => (
-                              <tr key={wordIndex} className={wordRes.isCorrect ? 'correct' : 'incorrect'}>
-                                <td>{wordRes.isCorrect ? '✅' : '❌'}</td>
-                                <td>{wordRes.kor}</td>
-                                <td>{wordRes.eng}</td>
-                                <td>
-                                  {wordRes.isCorrect 
-                                    ? <span className="text-gray-400">-</span> 
-                                    : <span className="user-answer">{wordRes.userAnswer || '미입력'}</span>
-                                  }
+                            {result.results.map((wordResult, wordIndex) => (
+                              <tr 
+                                key={wordIndex} 
+                                className={`border-t ${wordResult.isCorrect ? 'bg-green-50/50' : 'bg-red-50/50'}`}
+                              >
+                                <td className="p-3 text-center">
+                                  {wordResult.isCorrect ? (
+                                    <svg className="w-6 h-6 text-green-500 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                  ) : (
+                                    <svg className="w-6 h-6 text-red-500 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                                  )}
                                 </td>
+                                <td className="p-3 font-semibold">{wordResult.kor}</td>
+                                <td className="p-3">{wordResult.eng}</td>
+                                <td className={`p-3 ${!wordResult.isCorrect && 'text-red-600'}`}>{wordResult.userAnswer || '-'}</td>
                               </tr>
                             ))}
                           </tbody>
                         </table>
+
+                        {/* 모바일 뷰 (md 사이즈 미만) */}
+                        <div className="md:hidden space-y-3">
+                          {result.results.map((wordResult, wordIndex) => (
+                            <div 
+                              key={wordIndex} 
+                              className={`p-4 rounded-lg ${wordResult.isCorrect ? 'bg-green-100' : 'bg-red-100'}`}
+                            >
+                              <div className="flex justify-between items-start mb-2">
+                                <span className="font-bold text-lg text-gray-800">{wordResult.kor}</span>
+                                {wordResult.isCorrect ? (
+                                    <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                ) : (
+                                    <svg className="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                                )}
+                              </div>
+                              <div className="text-sm text-gray-700 space-y-1 pl-1">
+                                <p><strong className="font-medium text-gray-500">정답:</strong> {wordResult.eng}</p>
+                                <p>
+                                  <strong className="font-medium text-gray-500">내 답:</strong> 
+                                  <span className={`ml-1 ${!wordResult.isCorrect && 'text-red-600 font-semibold'}`}>
+                                    {wordResult.userAnswer || '-'}
+                                  </span>
+                                </p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     )}
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-base text-gray-500 text-center py-4">해당 날짜의 시험 기록이 없습니다.</p>
+              <p className="text-center text-gray-500 py-4">선택한 날짜에 시험 기록이 없습니다.</p>
             )}
           </div>
         )}
@@ -287,4 +301,4 @@ const MyPage: React.FC = () => {
   );
 };
 
-export default MyPage; 
+export default MyPage;
