@@ -82,9 +82,9 @@ const LearningPage: React.FC = () => {
   if (todayWords.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen">
-        <h1 className="text-2xl font-bold mb-4">학습 완료</h1>
-        <p>모든 단어 학습을 마쳤습니다. 대단해요!</p>
-        <Link to="/" className="text-blue-500 hover:underline">홈으로 돌아가기</Link>
+        <h1 className="text-2xl font-bold mb-4">Learning Complete</h1>
+        <p>You have finished learning all the words. Great job!</p>
+        <Link to="/" className="text-blue-500 hover:underline">Back to Home</Link>
       </div>
     );
   }
@@ -122,14 +122,14 @@ const LearningPage: React.FC = () => {
             onClick={handleStartTest}
             className="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
           >
-            오늘의 단어 시험보기
+            Take Today's Test
           </button>
           <Link
             to="/test"
             state={{ words: todayWords, isFreeTest: true }}
             className="w-full block bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105"
           >
-            자유 시험 보기
+            Take a Free Test
           </Link>
         </div>
       </div>

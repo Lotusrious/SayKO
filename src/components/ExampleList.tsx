@@ -4,10 +4,10 @@ import type { Example } from '../types/firestore';
 interface ExampleListProps {
   examples: Example[];
   wordToHighlight: string; // 하이라이트할 단어 (한국어)
-  onWordClick: (word: string) => void; // 단어 클릭 시 호출될 콜백 함수
+  engWordToHighlight: string; // 하이라이트할 단어 (영어)
 }
 
-const ExampleList: React.FC<ExampleListProps> = ({ examples, wordToHighlight, onWordClick }) => {
+const ExampleList: React.FC<ExampleListProps> = ({ examples, wordToHighlight, engWordToHighlight }) => {
   /**
    * 문장에서 특정 단어를 찾아 <strong> 태그로 감싸는 함수
    * @param sentence - 원본 문장
@@ -26,17 +26,12 @@ const ExampleList: React.FC<ExampleListProps> = ({ examples, wordToHighlight, on
         <span>
           {parts.map((part, index) =>
             part.toLowerCase() === word.toLowerCase() ? (
-              <a
+              <strong
                 key={index}
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onWordClick(word);
-                }}
-                className="font-bold text-blue-600 hover:underline cursor-pointer"
+                className="font-bold text-blue-600"
               >
                 {part}
-              </a>
+              </strong>
             ) : (
               part
             )
@@ -52,12 +47,12 @@ const ExampleList: React.FC<ExampleListProps> = ({ examples, wordToHighlight, on
   
   return (
     <div className="mt-4 space-y-3 text-gray-700">
-      <h4 className="font-semibold text-md">Examples:</h4>
-      <ul className="list-disc list-inside space-y-2">
+      <h4 className="font-semibold text-md text-center">Examples:</h4>
+      <ul className="space-y-4 text-center">
         {examples.map((ex, index) => (
           <li key={index}>
-            <p className="font-light">{highlightWord(ex.kor, wordToHighlight)}</p>
-            <p className="text-sm text-gray-500 font-mono pl-4">{ex.eng}</p>
+            <p className="font-light text-lg">{highlightWord(ex.kor, wordToHighlight)}</p>
+            <p className="text-sm text-gray-500 font-mono mt-1">{highlightWord(ex.eng, engWordToHighlight)}</p>
           </li>
         ))}
       </ul>

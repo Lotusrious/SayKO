@@ -27,12 +27,16 @@ const WordDetailModal: React.FC<WordDetailModalProps> = ({ isOpen, onClose, word
           <p className="text-xl text-gray-500 mt-1">{word.eng}</p>
         </div>
 
-        {word.examples && word.examples.length > 0 && (
+        {word.examples && word.examples.length > 0 ? (
           <ExampleList
             examples={word.examples}
             wordToHighlight={word.kor}
-            onWordClick={() => { /* 예문 속 단어 클릭은 여기서 처리 안 함 */ }}
+            engWordToHighlight={word.eng}
           />
+        ) : (
+          <div className="text-center text-gray-500 py-4">
+            <p>No examples available.</p>
+          </div>
         )}
       </div>
     </Modal>

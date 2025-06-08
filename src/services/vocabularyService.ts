@@ -43,8 +43,8 @@ export const getVocabularies = async (): Promise<Vocabulary[]> => {
       const rawExamples = data.examples || data.sentences || [];
       const examples: Example[] = rawExamples
         .map((ex: any) => ({
-          kor: ex.kor || ex.sentence_ko || '',
-          eng: ex.eng || ex.sentence_en || '',
+          kor: ex.kor || ex.sentence_ko || ex.korean || '',
+          eng: ex.eng || ex.sentence_en || ex.english || '',
         }))
         .filter((ex: Example) => ex.kor);
 
