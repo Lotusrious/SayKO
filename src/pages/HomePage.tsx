@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { FcGoogle } from 'react-icons/fc';
-import { FiTarget, FiCheckSquare, FiTrendingUp, FiBookOpen } from 'react-icons/fi';
+import { FiTarget, FiCheckSquare, FiTrendingUp } from 'react-icons/fi';
 import { calculateLearnedWords } from '../services/userService';
 
 // 로그인한 사용자를 위한 대시보드 컴포넌트
-const UserDashboard = () => {
+const Dashboard: React.FC = () => {
   const { currentUser, dbUser } = useAuth();
   const [learnedWords, setLearnedWords] = useState(0);
   const [totalWords, setTotalWords] = useState(0);
@@ -193,7 +193,7 @@ const LandingPage = () => {
 
 const HomePage: React.FC = () => {
   const { currentUser } = useAuth();
-  return currentUser ? <UserDashboard /> : <LandingPage />;
+  return currentUser ? <Dashboard /> : <LandingPage />;
 };
 
 export default HomePage; 

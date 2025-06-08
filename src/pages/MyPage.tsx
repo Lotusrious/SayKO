@@ -25,8 +25,6 @@ const MyPage: React.FC = () => {
   const [expandedResultId, setExpandedResultId] = useState<string | null>(null);
   const [completionRate, setCompletionRate] = useState(0);
   
-  const KST_TIMEZONE = 'Asia/Seoul'; // Using KST for consistency, but can be adapted
-
   // Calculate learning completion rate
   useEffect(() => {
     const calculateCompletion = async () => {
