@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp, getDocs, query, where, documentId, limit } from 'firebase/firestore';
 import { db } from '@/firebase';
 import { useAuth } from '@/contexts/AuthContext';
 import type { Vocabulary } from '../types/firestore';
-import { getVocabularies } from '../services/vocabularyService';
+import { getWordsForDay } from '../services/vocabularyService';
 
 const TestPage: React.FC = () => {
   const location = useLocation();
@@ -12,42 +12,49 @@ const TestPage: React.FC = () => {
   const { currentUser, dbUser } = useAuth();
   const [testWords, setTestWords] = useState<Vocabulary[]>([]);
   const [userAnswers, setUserAnswers] = useState<string[]>([]);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
-    async function prepareTestWords() {
-      setIsLoading(true);
-      const wordsFromState = location.state?.todayWords as Vocabulary[];
-      
-      if (wordsFromState && wordsFromState.length > 0) {
-        // LearningPage에서 단어를 전달받은 경우
-        setTestWords(wordsFromState);
-        setUserAnswers(new Array(wordsFromState.length).fill(''));
-      } else {
-        // HomePage 등 다른 경로에서 바로 접근한 경우, 랜덤 단어 25개 선택
-        try {
-          const allWords = await getVocabularies();
-          const shuffled = [...allWords].sort(() => 0.5 - Math.random());
-          const words = shuffled.slice(0, 25);
-          
-          if (words.length > 0) {
-            setTestWords(words);
-            setUserAnswers(new Array(words.length).fill(''));
-          } else {
-            alert('시험에 사용할 단어가 없습니다.');
-            navigate('/learn');
-          }
-        } catch (error) {
-          console.error("시험 단어를 불러오는 데 실패했습니다:", error);
-          alert('시험 단어를 불러오는 데 실패했습니다.');
+  const loadTestWords = useCallback(async () => {
+    setIsLoading(true);
+    const wordsFromState = location.state?.words as Vocabulary[];
+
+    // 1. LearningPage에서 단어를 직접 전달받은 경우
+    if (wordsFromState && wordsFromState.length > 0) {
+      setTestWords(wordsFromState);
+      setUserAnswers(new Array(wordsFromState.length).fill(''));
+      setIsLoading(false);
+      return;
+    }
+    
+    // 2. /test로 직접 접근한 경우 (자유 시험)
+    if (dbUser && typeof dbUser.currentCycle === 'number' && typeof dbUser.currentDay === 'number') {
+      try {
+        const wordsForToday = await getWordsForDay(dbUser.currentCycle, dbUser.currentDay);
+        if (wordsForToday.length > 0) {
+          setTestWords(wordsForToday);
+          setUserAnswers(new Array(wordsForToday.length).fill(''));
+        } else {
+          alert('오늘 학습할 단어가 없습니다.');
           navigate('/learn');
         }
+      } catch (error) {
+        console.error("오늘의 시험 단어를 불러오는 데 실패했습니다:", error);
+        alert('시험 단어를 불러오는 데 실패했습니다.');
+        navigate('/');
       }
-      setIsLoading(false);
+    } else {
+       // 로그인하지 않은 상태로 직접 접근 시
+       alert("시험을 보려면 로그인이 필요합니다.");
+       navigate('/login');
     }
-    prepareTestWords();
-  }, [location.state, navigate]);
+
+    setIsLoading(false);
+  }, [location.state, dbUser, navigate]);
+
+  useEffect(() => {
+    loadTestWords();
+  }, [loadTestWords]);
 
   const handleAnswerChange = (index: number, answer: string) => {
     const newAnswers = [...userAnswers];
@@ -57,48 +64,86 @@ const TestPage: React.FC = () => {
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     if (!currentUser || !dbUser) {
-        alert('로그인 및 사용자 정보가 필요합니다.');
-        navigate('/login');
-        return;
+      alert("시험 결과를 저장하려면 로그인이 필요합니다.");
+      navigate('/login');
+      return;
     }
+    
+    if (userAnswers.some(answer => answer.trim() === '')) {
+      if (!window.confirm('아직 모든 답을 입력하지 않았습니다. 제출하시겠습니까?')) {
+        return;
+      }
+    }
+
     setIsSubmitting(true);
 
     const newResults = testWords.map((word, index) => {
       const userAnswer = userAnswers[index]?.trim() || '';
       const correctAnswer = word.eng?.trim() || '';
-      const isCorrect = userAnswer.toLowerCase() === correctAnswer.toLowerCase();
       return {
         wordId: word.id,
-        question: word.kor,
-        userAnswer,
-        correctAnswer,
-        isCorrect,
+        kor: word.kor,
+        eng: correctAnswer,
+        userAnswer: userAnswer,
+        isCorrect: userAnswer.toLowerCase() === correctAnswer.toLowerCase(),
       };
     });
 
-    try {
-        const resultDocRef = await addDoc(collection(db, 'testResults'), {
-            userId: currentUser.uid,
-            date: serverTimestamp(),
-            cycle: dbUser.currentCycle || 1,
-            day: dbUser.currentDay || 1,
-            answers: newResults,
-        });
-        navigate(`/test-result/${resultDocRef.id}`);
+    const score = (newResults.filter(r => r.isCorrect).length / testWords.length) * 100;
+    
+    // location.state.words가 있으면 '학습 사이클 시험', 없으면 '자유 시험'으로 구분
+    const testType = location.state?.words ? 'cycle' : 'free';
 
+    // 자유 시험(free)인 경우, 결과를 저장하지 않고 바로 결과 페이지로 이동
+    if (testType === 'free') {
+      navigate('/test-result', {
+        state: {
+          results: newResults,
+          score: score,
+          testType: 'free',
+        }
+      });
+      return;
+    }
+    
+    // 학습 사이클 시험(cycle)인 경우, 결과를 Firestore에 저장
+    const cycle = dbUser.currentCycle;
+    const day = dbUser.currentDay;
+
+    try {
+      const docRef = await addDoc(collection(db, "testResults"), {
+        userId: currentUser.uid,
+        results: newResults,
+        score: score,
+        createdAt: serverTimestamp(),
+        // 자유 시험 모드를 구분하기 위한 필드 추가
+        testType,
+        cycle,
+        day,
+      });
+
+      // 학습 사이클 시험인 경우에만 stage advanced 로직을 적용해야 함
+      // (이 부분은 TestResultPage에서 처리하는 것이 더 적합할 수 있음)
+      
+      navigate(`/test-result/${docRef.id}`);
     } catch (error) {
-        console.error('Error submitting test results:', error);
-        alert('결과를 저장하는 중 오류가 발생했습니다.');
+      console.error('Error submitting test results:', error);
+      alert('결과를 저장하는 중 오류가 발생했습니다.');
     } finally {
-        setIsSubmitting(false);
+      setIsSubmitting(false);
     }
   };
 
   if (isLoading) {
-    return <div className="flex justify-center items-center min-h-screen">Loading test...</div>;
+    return <div className="flex justify-center items-center min-h-screen">Loading Test...</div>;
   }
-  
+
+  if (testWords.length === 0) {
+    return <div className="flex justify-center items-center h-screen">단어를 불러오지 못했습니다.</div>;
+  }
+
   return (
     <div className="py-6">
       <h1 className="text-3xl font-bold mb-2 text-center">Vocabulary Test</h1>
@@ -130,10 +175,10 @@ const TestPage: React.FC = () => {
         <div className="text-center pt-6">
           <button 
             type="submit"
-            className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg disabled:bg-gray-400"
             disabled={isSubmitting}
+            className="w-full bg-blue-500 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:bg-blue-700 transition-colors disabled:bg-gray-400"
           >
-            {isSubmitting ? '채점 중...' : '제출하고 결과 보기'}
+            {isSubmitting ? 'Submitting...' : 'Submit Answers'}
           </button>
         </div>
       </form>

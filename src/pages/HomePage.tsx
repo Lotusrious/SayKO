@@ -10,24 +10,16 @@ const HomePage: React.FC = () => {
       <h1 className="text-5xl font-extrabold text-gray-800 mb-4">
         SayKO에 오신 것을 환영합니다!
       </h1>
-      <p className="text-xl text-gray-600 mb-8 max-w-2xl">
-        SayKO는 과학적인 반복 학습 사이클을 통해 효율적인 단어 암기를 돕는 서비스입니다. 매일 새로운 단어를 학습하고, 간단한 시험을 통해 실력을 확인하며 독일어 어휘를 정복해 보세요.
+      <p className="text-xl text-gray-700 mb-8">
+        매일 새로운 단어를 학습하고 퀴즈로 실력을 테스트하세요.
       </p>
       <div className="flex space-x-4">
         {currentUser ? (
-          <>
-            <Link
-              to="/learn"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform transform hover:scale-105"
-            >
-              학습 이어서하기
-            </Link>
-          </>
+          <Link to="/learn" className="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 transition-colors">
+            학습 시작하기
+          </Link>
         ) : (
-          <Link
-            to="/login"
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform transform hover:scale-105"
-          >
+          <Link to="/login" className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform transform hover:scale-105">
             Google 계정으로 시작하기
           </Link>
         )}

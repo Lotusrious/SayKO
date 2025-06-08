@@ -1,35 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { getVocabularies } from '@/services/vocabularyService';
+import { getWordsForDay, CYCLE_CONFIG } from '@/services/vocabularyService';
 import type { Vocabulary } from '../types/firestore';
 import { updateUserData } from '../services/userService';
 import WordCard from '../components/WordCard';
 import Modal from '../components/Modal';
 import WordDetailModal from '@/components/WordDetailModal';
 
-// 사이클 설정 타입 정의
-interface CycleConfig {
-  [key: number]: {
-    wordsPerDay: number;
-    duration: number;
-  };
-}
-
-// 사이클 별 설정
-const cycleConfig: CycleConfig = {
-  1: { wordsPerDay: 25, duration: 20 }, // 500 / 25 = 20일
-  2: { wordsPerDay: 50, duration: 10 }, // 500 / 50 = 10일
-  3: { wordsPerDay: 100, duration: 5 }, // 500 / 100 = 5일
-  4: { wordsPerDay: 250, duration: 2 }, // 500 / 250 = 2일
-  5: { wordsPerDay: 500, duration: 1 }, // 500 / 500 = 1일
-};
-
 const LearningPage: React.FC = () => {
   const { currentUser, dbUser, refreshDbUser } = useAuth();
   const navigate = useNavigate();
   
-  const [vocabularies, setVocabularies] = useState<Vocabulary[]>([]);
   const [todayWords, setTodayWords] = useState<Vocabulary[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isCompleting, setIsCompleting] = useState(false);
@@ -40,34 +22,27 @@ const LearningPage: React.FC = () => {
 
   useEffect(() => {
     const loadData = async () => {
+      if (!dbUser) {
+        setIsLoading(false);
+        return;
+      }
+
       setIsLoading(true);
       try {
-        const allWords = await getVocabularies();
-        setVocabularies(allWords);
-
-        if (dbUser && dbUser.currentCycle && dbUser.currentDay) {
-          const { currentCycle, currentDay } = dbUser;
-          const config = cycleConfig[currentCycle];
-          
-          if (config) {
-            const startIndex = (currentDay - 1) * config.wordsPerDay;
-            const endIndex = startIndex + config.wordsPerDay;
-            // 사이클마다 섞는 로직을 제거하고, 고정된 순서에서 자르기만 합니다.
-            const words = allWords.slice(startIndex, endIndex);
-            setTodayWords(words);
-          }
+        const { currentCycle, currentDay } = dbUser;
+        // dbUser의 cycle과 day가 유효한 숫자인지 확인
+        if (typeof currentCycle === 'number' && typeof currentDay === 'number') {
+          const words = await getWordsForDay(currentCycle, currentDay);
+          setTodayWords(words);
         }
       } catch (error) {
-        console.error("Failed to load vocabularies:", error);
-        // 사용자에게 에러를 알려주는 UI 추가도 고려해볼 수 있습니다.
+        console.error("Failed to load today's words:", error);
       } finally {
         setIsLoading(false);
       }
     };
     
-    if (dbUser) {
-      loadData();
-    }
+    loadData();
   }, [dbUser]);
 
   const handleLearningComplete = async () => {
@@ -77,7 +52,7 @@ const LearningPage: React.FC = () => {
     try {
       let nextDay = (dbUser.currentDay || 1) + 1;
       let nextCycle = dbUser.currentCycle || 1;
-      const config = cycleConfig[nextCycle as keyof typeof cycleConfig] || cycleConfig[1];
+      const config = CYCLE_CONFIG[nextCycle as keyof typeof CYCLE_CONFIG] || CYCLE_CONFIG[1];
 
       // 현재 사이클이 종료되었는지 확인
       if (nextDay > config.duration) {
@@ -104,7 +79,7 @@ const LearningPage: React.FC = () => {
   };
 
   const handleWordClick = (wordKor: string) => {
-    const foundWord = vocabularies.find(v => v.kor === wordKor);
+    const foundWord = todayWords.find(v => v.kor === wordKor);
     if (foundWord) {
       setSelectedWord(foundWord);
       setIsModalOpen(true);
@@ -112,17 +87,7 @@ const LearningPage: React.FC = () => {
   };
 
   const handleStartTest = () => {
-    const wordsForTest = [...todayWords];
-
-    // 오늘의 단어가 25개를 초과하면, 그 중에서 25개를 랜덤으로 선택합니다.
-    if (wordsForTest.length > 25) {
-      const shuffled = wordsForTest.sort(() => 0.5 - Math.random());
-      const selectedWords = shuffled.slice(0, 25);
-      navigate('/test', { state: { todayWords: selectedWords } });
-    } else {
-      // 오늘의 단어가 25개 이하이면 (Cycle 1), 모든 단어로 시험을 봅니다.
-      navigate('/test', { state: { todayWords: wordsForTest } });
-    }
+    navigate('/test', { state: { words: todayWords } });
   };
 
   if (isLoading) {
@@ -136,8 +101,7 @@ const LearningPage: React.FC = () => {
 
   const currentCycle = dbUser?.currentCycle || 1;
   const currentDay = dbUser?.currentDay || 1;
-  const config = cycleConfig[currentCycle as keyof typeof cycleConfig] || cycleConfig[1];
-  const startIndex = (currentDay - 1) * config.wordsPerDay;
+  const config = CYCLE_CONFIG[currentCycle as keyof typeof CYCLE_CONFIG] || CYCLE_CONFIG[1];
 
   if (todayWords.length === 0) {
     return (
@@ -181,8 +145,14 @@ const LearningPage: React.FC = () => {
             onClick={handleStartTest}
             className="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
           >
-            Take a Test
+            오늘의 단어 시험보기
           </button>
+          <Link
+            to="/test"
+            className="w-full block bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105"
+          >
+            자유 시험 보기
+          </Link>
         </div>
       </div>
 
