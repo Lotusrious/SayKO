@@ -1,6 +1,6 @@
 # Task ID: 18
 # Title: 전체 라우팅 및 네비게이션 설정
-# Status: pending
+# Status: done
 # Dependencies: 2, 10, 17
 # Priority: medium
 # Description: React Router DOM을 사용하여 앱의 모든 페이지 간의 흐름을 정의하고 네비게이션 UI를 구현합니다.

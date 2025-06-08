@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { getWordsForDay, getTestResultsForUser, CYCLE_CONFIG } from '@/services/vocabularyService';
-import type { Vocabulary } from '../types/firestore';
+import { getWordsForDay, getTestResultsForUser } from '@/services/vocabularyService';
+import type { Vocabulary } from '@/types/firestore';
 import WordCard from '../components/WordCard';
 import WordDetailModal from '@/components/WordDetailModal';
 

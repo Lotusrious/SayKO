@@ -8,6 +8,7 @@ import TestPage from './pages/TestPage';
 import ImageCardPage from './pages/ImageCardPage';
 import TestResultPage from './pages/TestResultPage';
 import ProtectedLayout from './components/ProtectedLayout';
+import MyPage from './pages/MyPage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/test" element={<PrivateRoute><TestPage /></PrivateRoute>} />
             <Route path="/image-cards" element={<PrivateRoute><ImageCardPage /></PrivateRoute>} />
             <Route path="/test-result" element={<PrivateRoute><TestResultPage /></PrivateRoute>} />
+            <Route path="/mypage" element={<PrivateRoute><MyPage /></PrivateRoute>} />
           </Route>
         </Routes>
       </div>

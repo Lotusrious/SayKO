@@ -1,0 +1,166 @@
+.react-calendar {
+  width: 100%;
+  border: none;
+  font-family: inherit;
+}
+
+/* Navigation */
+.react-calendar__navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.react-calendar__navigation button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4b5563; /* gray-600 */
+  background: none;
+  font-size: 1.5rem; /* text-2xl */
+  border-radius: 0.375rem; /* rounded-md */
+  padding: 0.25rem 0.5rem;
+  transition: background-color 0.2s ease-in-out;
+}
+.react-calendar__navigation button:enabled:hover {
+  background-color: #f3f4f6; /* gray-100 */
+}
+.react-calendar__navigation__prev-button {
+  left: 0;
+}
+.react-calendar__navigation__next-button {
+  right: 0;
+}
+.react-calendar__navigation__prev2-button,
+.react-calendar__navigation__next2-button {
+  display: none; /* 연도 이동 버튼 숨기기 */
+}
+
+/* Weekdays */
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  font-weight: 500;
+  color: #6b7280; /* gray-500 */
+  margin-bottom: 0.5rem;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  padding: 0.5em;
+}
+
+/* Days */
+.react-calendar__tile {
+  max-width: 100%;
+  padding: 1rem 0.5rem;
+  background: none;
+  text-align: center;
+  border-radius: 0.75rem; /* rounded-xl */
+  transition: background-color 0.2s ease-in-out;
+  position: relative;
+  font-weight: 500;
+}
+
+.react-calendar__tile:disabled {
+  color: #d1d5db; /* gray-300 */
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #f3f4f6; /* gray-100 */
+}
+
+/* 오늘 날짜 */
+.react-calendar__tile--now {
+  background: #eff6ff; /* blue-50 */
+  color: #2563eb; /* blue-600 */
+}
+
+/* 선택된 날짜 */
+.react-calendar__tile--active {
+  background: #2563eb; /* blue-600 */
+  color: white;
+}
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #1d4ed8; /* blue-700 */
+}
+
+/* 학습 기록 점 */
+.dot {
+  height: 6px;
+  width: 6px;
+  background-color: #ef4444; /* red-500 */
+  border-radius: 50%;
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dot.pass {
+  background-color: #22c55e; /* green-500 */
+}
+
+/* 시험 결과 카드 */
+.result-card {
+  border-radius: 0.75rem; /* rounded-xl */
+  overflow: hidden;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  transition: box-shadow 0.2s ease-in-out;
+}
+.result-card:hover {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.result-details {
+  padding: 1rem;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb; /* gray-200 */
+}
+
+.result-details table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem; /* text-sm */
+}
+
+.result-details th,
+.result-details td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #f3f4f6; /* gray-100 */
+}
+
+.result-details th {
+  background-color: #f9fafb; /* gray-50 */
+  font-weight: 600; /* font-semibold */
+  color: #4b5563; /* gray-600 */
+}
+
+.result-details tr.correct {
+  background-color: #f0fdf4; /* green-50 */
+}
+.result-details tr.incorrect {
+  background-color: #fef2f2; /* red-50 */
+}
+
+.result-details td:first-child {
+  text-align: center;
+}
+
+.result-details .user-answer {
+  color: #dc2626; /* red-600 */
+  font-weight: 500;
+}
+
+/* 100% 통과 뱃지 */
+.pass-badge {
+  background-color: #dcfce7; /* green-100 */
+  color: #166534; /* green-800 */
+  padding: 0.25rem 0.625rem; /* py-1 px-2.5 */
+  border-radius: 9999px; /* rounded-full */
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 600; /* font-semibold */
+} 

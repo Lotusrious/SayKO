@@ -198,4 +198,54 @@ export const getWordsForDay = async (cycle: number, day: number): Promise<Vocabu
 
   // 전체 단어 목록 내에서 해당 부분을 잘라 반환합니다.
   return allWords.slice(startIndex, endIndex);
+};
+
+/**
+ * 사용자의 학습 단계를 다음으로 진행시킵니다.
+ * 현재 학습일(day)을 1 증가시키고, 사이클의 마지막 날이면 다음 사이클로 넘어갑니다.
+ * @param userId 사용자의 ID
+ * @param currentCycle 현재 사이클
+ * @param currentDay 현재 학습일
+ */
+export const advanceUserProgress = async (userId: string, currentCycle: number, currentDay: number): Promise<void> => {
+  if (!userId) {
+    throw new Error('User ID is required to advance progress.');
+  }
+
+  const userDocRef = doc(db, 'users', userId);
+  const cycleConfig = CYCLE_CONFIG[currentCycle];
+
+  if (!cycleConfig) {
+    console.error(`Invalid cycle number: ${currentCycle}`);
+    return; // or throw an error
+  }
+
+  let nextDay = currentDay + 1;
+  let nextCycle = currentCycle;
+
+  // 현재 사이클의 마지막 날인지 확인
+  if (nextDay > cycleConfig.duration) {
+    nextDay = 1; // 다음 사이클의 첫째 날로
+    nextCycle += 1; // 다음 사이클로
+    
+    // 마지막 사이클(5)을 넘어가면 더 이상 진행하지 않음 (혹은 초기화)
+    if (nextCycle > Object.keys(CYCLE_CONFIG).length) {
+      console.log("모든 학습 사이클을 완료했습니다!");
+      // 여기서는 더 이상 업데이트하지 않거나, 특정 상태로 설정할 수 있습니다.
+      // 예를 들어, nextCycle = 1, nextDay = 1 로 다시 시작하게 할 수도 있습니다.
+      // 일단은 마지막 상태를 유지하도록 둡니다.
+      return;
+    }
+  }
+  
+  try {
+    await updateDoc(userDocRef, {
+      currentDay: nextDay,
+      currentCycle: nextCycle,
+    });
+    console.log(`User ${userId} progress advanced to Cycle ${nextCycle}, Day ${nextDay}`);
+  } catch (error) {
+    console.error('Error advancing user progress: ', error);
+    throw new Error('Failed to advance user progress.');
+  }
 }; 

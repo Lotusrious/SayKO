@@ -1,19 +1,17 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { doc, getDoc, runTransaction } from 'firebase/firestore';
-import { db } from '@/firebase';
-import type { TestResult, Vocabulary } from '@/types/firestore';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
-import { saveTestResult, getTestResultById, CYCLE_CONFIG } from '@/services/vocabularyService';
+import { getTestResultById } from '@/services/vocabularyService';
+import type { TestResult, Vocabulary } from '@/types/firestore';
 
 const TestResultPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { currentUser, dbUser, refreshDbUser } = useAuth();
+  const { currentUser } = useAuth();
 
   const [result, setResult] = useState<TestResult | null>(null);
   const [loading, setLoading] = useState(true);
-  const [isUpdatingStage, setIsUpdatingStage] = useState(false);
+  const passed = location.state?.passed || false;
 
   useEffect(() => {
     const fetchResult = async () => {
@@ -39,53 +37,6 @@ const TestResultPage = () => {
     fetchResult();
   }, [location.state, currentUser, navigate]);
 
-  const handleNextStage = async () => {
-    if (!currentUser || !dbUser || !result || result.isFreeTest) return;
-    
-    if (result.stageAdvanced) {
-        alert("이미 다음 스테이지로 이동 처리된 결과입니다.");
-        return;
-    }
-
-    setIsUpdatingStage(true);
-
-    const userRef = doc(db, 'users', currentUser.uid);
-    const resultRef = doc(db, 'users', currentUser.uid, 'testResults', result.id);
-
-    try {
-      await runTransaction(db, async (transaction) => {
-        const userDoc = await transaction.get(userRef);
-        if (!userDoc.exists()) {
-          throw "User document does not exist!";
-        }
-        
-        const userData = userDoc.data();
-        let nextDay = (userData.currentDay || 1) + 1;
-        let nextCycle = userData.currentCycle || 1;
-        const config = CYCLE_CONFIG[nextCycle] || CYCLE_CONFIG[1];
-
-        if (nextDay > config.duration) {
-          nextDay = 1;
-          nextCycle += 1;
-          if (nextCycle > 5) nextCycle = 5;
-        }
-        
-        transaction.update(userRef, { currentDay: nextDay, currentCycle: nextCycle });
-        transaction.update(resultRef, { stageAdvanced: true });
-      });
-
-      await refreshDbUser();
-      
-      setTimeout(() => {
-        navigate('/learn');
-      }, 1000);
-
-    } catch (error) {
-      console.error("Failed to update user data in transaction:", error);
-      setIsUpdatingStage(false);
-    }
-  };
-
   const handleRetakeAll = () => {
     if (!result) return;
 
@@ -99,7 +50,7 @@ const TestResultPage = () => {
         priority: 0,
         meaning: '',
         examples: [],
-        imageUrl: '',
+        pronunciation: '',
       }));
     
     navigate('/test', { state: { words: allWordsForRetake } });
@@ -107,15 +58,6 @@ const TestResultPage = () => {
 
   if (loading) {
     return <div>결과를 불러오는 중입니다...</div>;
-  }
-
-  if (isUpdatingStage) {
-    return (
-      <div className="fixed inset-0 bg-blue-500 flex flex-col justify-center items-center text-white transition-opacity duration-500">
-        <h2 className="text-4xl font-bold animate-pulse">다음 스테이지로 이동합니다!</h2>
-        <p className="mt-4 text-lg">잠시만 기다려주세요...</p>
-      </div>
-    );
   }
 
   if (!result) {
@@ -126,9 +68,6 @@ const TestResultPage = () => {
   const totalQuestions = result.results.length;
   const percentage = totalQuestions > 0 ? (correctAnswersCount / totalQuestions) * 100 : 0;
   
-  // 20문제 이상 맞췄는지 여부
-  const canAdvance = correctAnswersCount >= 20;
-
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-2 text-center">시험 결과</h1>
@@ -146,24 +85,28 @@ const TestResultPage = () => {
       </div>
       
       <div className="flex justify-center space-x-4 mb-8">
-        <button 
-          onClick={() => navigate('/learn', { state: { timestamp: Date.now() } })}
-          className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded inline-block"
-        >
-          학습 페이지로 돌아가기
-        </button>
-        <button onClick={handleRetakeAll} className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
-          문제 다시 풀기
-        </button>
-        {/* 20문제 이상 맞았고, 정식 시험일 경우 '다음 스테이지' 버튼 표시 */}
-        {canAdvance && !result.isFreeTest && (
+        {passed ? (
           <button 
-            onClick={handleNextStage} 
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded disabled:bg-gray-400"
-            disabled={isUpdatingStage || result.stageAdvanced}
+            onClick={() => navigate('/learn')}
+            className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg text-lg shadow-lg animate-pulse"
           >
-            {result.stageAdvanced ? '완료됨' : (isUpdatingStage ? '이동 중...' : '다음 스테이지로 가기')}
+            다음 스테이지로!
           </button>
+        ) : (
+          <>
+            <button 
+              onClick={() => navigate('/learn')}
+              className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded"
+            >
+              학습 페이지로 돌아가기
+            </button>
+            <button 
+              onClick={handleRetakeAll} 
+              className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded"
+            >
+              문제 다시 풀기
+            </button>
+          </>
         )}
       </div>
 

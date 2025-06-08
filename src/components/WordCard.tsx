@@ -53,7 +53,12 @@ const WordCard: React.FC<WordCardProps> = ({ word, index, isIncorrect, onWordCli
       <div className="flex justify-between items-center">
         <div className="flex items-center space-x-3">
           <span className="text-gray-400 font-medium">{index}.</span>
-          <h3 className="text-xl font-semibold text-gray-800">{word.kor}</h3>
+          <div>
+            <h3 className="text-xl font-semibold text-gray-800">{word.kor}</h3>
+            {word.pronunciation && (
+              <p className="text-sm text-gray-500">{word.pronunciation}</p>
+            )}
+          </div>
           <button onClick={handlePlaySound} className="text-gray-500 hover:text-blue-600" disabled={isSoundLoading}>
             {isSoundLoading ? <AiOutlineLoading className="animate-spin" size={22} /> : <AiFillSound size={22} />}
           </button>

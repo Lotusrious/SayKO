@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
-import { saveTestResult } from '@/services/vocabularyService';
+import { saveTestResult, advanceUserProgress } from '@/services/vocabularyService';
 import type { Vocabulary, TestAnswer } from '@/types/firestore';
-import { getWordsForDay, CYCLE_CONFIG } from '@/services/vocabularyService';
+import { getWordsForDay } from '@/services/vocabularyService';
 
 const TestPage: React.FC = () => {
-  const { currentUser, dbUser } = useAuth();
+  const { currentUser, dbUser, refreshDbUser } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -67,8 +67,8 @@ const TestPage: React.FC = () => {
 
     const { currentCycle = 1, currentDay = 1 } = dbUser;
     
-    // 20문제 이상 맞혔을 때만 스테이지 진행
-    const stageAdvanced = !isFreeTest && correctAnswers >= 20;
+    // 자유 시험 모드가 아니고, 80점 이상 받았을 때만 스테이지 자동 진행
+    const passed = !isFreeTest && score >= 80;
 
     const resultData = {
       userId: currentUser.uid,
@@ -76,16 +76,23 @@ const TestPage: React.FC = () => {
       score,
       cycle: currentCycle,
       day: currentDay,
-      stageAdvanced,
+      stageAdvanced: passed, // stageAdvanced를 통과 여부로 사용
       isFreeTest,
     };
 
     try {
+      if (passed) {
+        // 사용자의 학습 단계를 다음으로 진행시킵니다.
+        await advanceUserProgress(currentUser.uid, currentCycle, currentDay);
+        // AuthContext의 사용자 정보를 갱신합니다.
+        await refreshDbUser();
+      }
       const docId = await saveTestResult(currentUser.uid, resultData);
-      navigate('/test-result', { state: { resultId: docId } });
+      // 결과 페이지로 이동할 때, 통과 여부를 state로 전달합니다.
+      navigate('/test-result', { state: { resultId: docId, passed } });
     } catch (error) {
-      console.error("Failed to save test result:", error);
-      alert("결과 저장에 실패했습니다.");
+      console.error("Failed to save test result or advance progress:", error);
+      alert("결과 저장 또는 진행 상태 업데이트에 실패했습니다.");
     } finally {
       setIsSubmitting(false);
     }

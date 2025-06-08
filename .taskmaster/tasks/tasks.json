@@ -287,7 +287,7 @@
       "id": 6,
       "title": "TTS 음성 재생 기능 구현",
       "description": "단어나 예문 옆의 스피커 아이콘을 클릭했을 때, Firebase Cloud Function을 통해 TTS API를 호출하고 반환된 음성 데이터를 재생하는 기능을 구현합니다.",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
       "dependencies": [
         5,
@@ -373,7 +373,7 @@
       "id": 13,
       "title": "'학습 성취도 확인 모드' 구현",
       "description": "사용자가 원할 때 자신의 암기 수준을 점검할 수 있는 예비 시험 모드를 구현합니다.",
-      "status": "in-progress",
+      "status": "done",
       "priority": "medium",
       "dependencies": [
         10
@@ -385,7 +385,7 @@
       "id": 14,
       "title": "'오답 노트' 기능 구현",
       "description": "'시험 모드'에서 틀린 단어들만 모아서 다시 풀어볼 수 있는 기능을 구현합니다.",
-      "status": "in-progress",
+      "status": "done",
       "priority": "medium",
       "dependencies": [
         13
@@ -397,7 +397,7 @@
       "id": 15,
       "title": "언어 쌍 선택 기능 구현",
       "description": "사용자가 학습 방향(예: 한->영, 영->한)을 선택하고 변경할 수 있는 UI를 구현합니다.",
-      "status": "pending",
+      "status": "deferred",
       "priority": "medium",
       "dependencies": [
         2,
@@ -410,7 +410,7 @@
       "id": 16,
       "title": "학습 진도 시각화 달력 구현",
       "description": "사용자가 언제 어떤 학습을 완료했는지 보여주는 달력 UI를 구현합니다.",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "dependencies": [
         11
@@ -422,7 +422,7 @@
       "id": 17,
       "title": "사용자 대시보드 구현",
       "description": "로그인 후 사용자가 보게 될 메인 페이지로, 학습 현황과 주요 기능 바로가기를 제공합니다.",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
       "dependencies": [
         9,
@@ -435,7 +435,7 @@
       "id": 18,
       "title": "전체 라우팅 및 네비게이션 설정",
       "description": "React Router DOM을 사용하여 앱의 모든 페이지 간의 흐름을 정의하고 네비게이션 UI를 구현합니다.",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
       "dependencies": [
         2,
@@ -449,7 +449,7 @@
       "id": 19,
       "title": "전역 스타일링 및 반응형 디자인 적용",
       "description": "애플리케이션 전체에 일관된 디자인 시스템을 적용하고, 모바일/태블릿/데스크탑 환경을 모두 지원하는 반응형 UI를 구현합니다.",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
       "dependencies": [
         18

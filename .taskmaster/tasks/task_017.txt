@@ -1,6 +1,6 @@
 # Task ID: 17
 # Title: 사용자 대시보드 구현
-# Status: pending
+# Status: done
 # Dependencies: 9, 16
 # Priority: medium
 # Description: 로그인 후 사용자가 보게 될 메인 페이지로, 학습 현황과 주요 기능 바로가기를 제공합니다.

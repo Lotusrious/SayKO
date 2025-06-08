@@ -1,6 +1,6 @@
 # Task ID: 13
 # Title: '학습 성취도 확인 모드' 구현
-# Status: in-progress
+# Status: done
 # Dependencies: 10
 # Priority: medium
 # Description: 사용자가 원할 때 자신의 암기 수준을 점검할 수 있는 예비 시험 모드를 구현합니다.
