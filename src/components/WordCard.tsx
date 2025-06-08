@@ -5,13 +5,16 @@ import ExampleList from './ExampleList';
 interface WordCardProps {
   word: Vocabulary;
   index: number;
+  isIncorrect: boolean;
   onWordClick: (word: string) => void;
 }
 
-const WordCard: React.FC<WordCardProps> = ({ word, index, onWordClick }) => {
+const WordCard: React.FC<WordCardProps> = ({ word, index, isIncorrect, onWordClick }) => {
+  const cardBgColor = isIncorrect ? 'bg-red-50' : 'bg-white';
+
   return (
     <div 
-      className="bg-white p-4 rounded-lg shadow-sm transition-all hover:shadow-md hover:scale-105 cursor-pointer"
+      className={`${cardBgColor} p-4 rounded-lg shadow-sm transition-all hover:shadow-md hover:scale-105 cursor-pointer`}
       onClick={() => onWordClick(word.kor)}
     >
       <div className="flex justify-between items-center">

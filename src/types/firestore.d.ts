@@ -61,4 +61,5 @@ export interface TestResult {
   score: number;
   createdAt: Date;
   stageAdvanced?: boolean;
+  isFreeTest?: boolean;
 } 

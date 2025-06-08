@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { collection, addDoc, serverTimestamp, getDocs, query, where, documentId, limit } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/firebase';
 import { useAuth } from '@/contexts/AuthContext';
 import type { Vocabulary } from '../types/firestore';
@@ -19,7 +19,6 @@ const TestPage: React.FC = () => {
     setIsLoading(true);
     const wordsFromState = location.state?.words as Vocabulary[];
 
-    // 1. LearningPage에서 단어를 직접 전달받은 경우
     if (wordsFromState && wordsFromState.length > 0) {
       setTestWords(wordsFromState);
       setUserAnswers(new Array(wordsFromState.length).fill(''));
@@ -27,7 +26,6 @@ const TestPage: React.FC = () => {
       return;
     }
     
-    // 2. /test로 직접 접근한 경우 (자유 시험)
     if (dbUser && typeof dbUser.currentCycle === 'number' && typeof dbUser.currentDay === 'number') {
       try {
         const wordsForToday = await getWordsForDay(dbUser.currentCycle, dbUser.currentDay);
@@ -44,7 +42,6 @@ const TestPage: React.FC = () => {
         navigate('/');
       }
     } else {
-       // 로그인하지 않은 상태로 직접 접근 시
        alert("시험을 보려면 로그인이 필요합니다.");
        navigate('/login');
     }
@@ -93,47 +90,17 @@ const TestPage: React.FC = () => {
 
     const score = (newResults.filter(r => r.isCorrect).length / testWords.length) * 100;
     
-    // location.state.words가 있으면 '학습 사이클 시험', 없으면 '자유 시험'으로 구분
-    const testType = location.state?.words ? 'cycle' : 'free';
+    const isFreeTest = location.state?.words ? false : true;
 
-    // 자유 시험(free)인 경우, 결과를 저장하지 않고 바로 결과 페이지로 이동
-    if (testType === 'free') {
-      navigate('/test-result', {
-        state: {
-          results: newResults,
-          score: score,
-          testType: 'free',
-        }
-      });
-      return;
-    }
+    const resultData = {
+      results: newResults,
+      score: score,
+      cycle: dbUser.currentCycle,
+      day: dbUser.currentDay,
+      isFreeTest,
+    };
     
-    // 학습 사이클 시험(cycle)인 경우, 결과를 Firestore에 저장
-    const cycle = dbUser.currentCycle;
-    const day = dbUser.currentDay;
-
-    try {
-      const docRef = await addDoc(collection(db, "testResults"), {
-        userId: currentUser.uid,
-        results: newResults,
-        score: score,
-        createdAt: serverTimestamp(),
-        // 자유 시험 모드를 구분하기 위한 필드 추가
-        testType,
-        cycle,
-        day,
-      });
-
-      // 학습 사이클 시험인 경우에만 stage advanced 로직을 적용해야 함
-      // (이 부분은 TestResultPage에서 처리하는 것이 더 적합할 수 있음)
-      
-      navigate(`/test-result/${docRef.id}`);
-    } catch (error) {
-      console.error('Error submitting test results:', error);
-      alert('결과를 저장하는 중 오류가 발생했습니다.');
-    } finally {
-      setIsSubmitting(false);
-    }
+    navigate('/test-result', { state: { resultData } });
   };
 
   if (isLoading) {

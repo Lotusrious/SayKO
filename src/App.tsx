@@ -20,7 +20,7 @@ function App() {
         <Route element={<ProtectedLayout />}>
           <Route path="/learn" element={<LearningPage />} />
           <Route path="/test" element={<TestPage />} />
-          <Route path="/test-result/:resultId" element={<TestResultPage />} />
+          <Route path="/test-result" element={<TestResultPage />} />
           <Route path="/image-cards" element={<ImageCardPage />} />
         </Route>
       </Route>

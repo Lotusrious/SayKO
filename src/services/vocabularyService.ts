@@ -1,6 +1,16 @@
-import { collection, getDocs, orderBy, query } from 'firebase/firestore';
+import {
+  collection,
+  getDocs,
+  orderBy,
+  query,
+  addDoc,
+  doc,
+  getDoc,
+  updateDoc,
+  serverTimestamp,
+} from 'firebase/firestore';
 import { db } from '../firebase';
-import type { Vocabulary, Example } from '../types/firestore';
+import type { Vocabulary, Example, TestResult } from '../types/firestore';
 
 /**
  * Firestore의 'vocabularies' 컬렉션에서 모든 단어 목록을 가져와
@@ -56,6 +66,72 @@ export const getVocabularies = async (): Promise<Vocabulary[]> => {
   } catch (error) {
     console.error('Error fetching vocabularies: ', error);
     throw new Error('Failed to fetch and transform vocabularies from Firestore.');
+  }
+};
+
+/**
+ * 시험 결과를 Firestore에 저장합니다.
+ * 'users/{userId}/testResults' 경로에 저장됩니다.
+ * @param userId - 시험을 본 사용자의 ID
+ * @param resultData - 저장할 시험 결과 데이터
+ * @returns {Promise<string>} 저장된 문서의 ID
+ */
+export const saveTestResult = async (
+  userId: string,
+  resultData: Omit<TestResult, 'id' | 'createdAt'>
+): Promise<string> => {
+  if (!userId) {
+    throw new Error('User ID is required to save test results.');
+  }
+  try {
+    const docRef = await addDoc(
+      collection(db, 'users', userId, 'testResults'),
+      {
+        ...resultData,
+        createdAt: serverTimestamp(),
+      }
+    );
+    return docRef.id;
+  } catch (error) {
+    console.error('Error saving test result: ', error);
+    throw new Error('Failed to save test result.');
+  }
+};
+
+/**
+ * 특정 사용자의 모든 시험 결과를 Firestore에서 가져옵니다.
+ * @param userId - 조회할 사용자의 ID
+ * @returns {Promise<TestResult[]>} 해당 사용자의 모든 시험 결과 배열
+ */
+export const getTestResultsForUser = async (userId: string): Promise<TestResult[]> => {
+  if (!userId) {
+    throw new Error('User ID is required to fetch test results.');
+  }
+  try {
+    const results: TestResult[] = [];
+    const q = query(
+      collection(db, 'users', userId, 'testResults'),
+      orderBy('createdAt', 'desc')
+    );
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      results.push({
+        id: doc.id,
+        userId: data.userId,
+        results: data.results,
+        score: data.score,
+        createdAt: data.createdAt.toDate(),
+        cycle: data.cycle,
+        day: data.day,
+        stageAdvanced: data.stageAdvanced,
+        isFreeTest: data.isFreeTest,
+      });
+    });
+    return results;
+  } catch (error) {
+    console.error('Error fetching test results for user: ', error);
+    throw new Error('Failed to fetch test results.');
   }
 };
 

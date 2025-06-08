@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { getWordsForDay, CYCLE_CONFIG } from '@/services/vocabularyService';
+import { getWordsForDay, getTestResultsForUser, CYCLE_CONFIG } from '@/services/vocabularyService';
 import type { Vocabulary } from '../types/firestore';
 import { updateUserData } from '../services/userService';
 import WordCard from '../components/WordCard';
@@ -13,6 +13,7 @@ const LearningPage: React.FC = () => {
   const navigate = useNavigate();
   
   const [todayWords, setTodayWords] = useState<Vocabulary[]>([]);
+  const [incorrectWordIds, setIncorrectWordIds] = useState<Set<string>>(new Set());
   const [isLoading, setIsLoading] = useState(true);
   const [isCompleting, setIsCompleting] = useState(false);
   
@@ -22,28 +23,44 @@ const LearningPage: React.FC = () => {
 
   useEffect(() => {
     const loadData = async () => {
-      if (!dbUser) {
+      if (!dbUser || !currentUser) {
         setIsLoading(false);
         return;
       }
 
       setIsLoading(true);
       try {
+        // 1. 오늘의 단어 불러오기
         const { currentCycle, currentDay } = dbUser;
-        // dbUser의 cycle과 day가 유효한 숫자인지 확인
         if (typeof currentCycle === 'number' && typeof currentDay === 'number') {
           const words = await getWordsForDay(currentCycle, currentDay);
           setTodayWords(words);
         }
+
+        // 2. 모든 시험 결과에서 틀린 단어 ID 집계하기
+        const testResults = await getTestResultsForUser(currentUser.uid);
+        console.log("Firestore에서 가져온 시험 결과:", testResults); // 디버깅용 로그
+
+        const incorrectIds = new Set<string>();
+        testResults.forEach(result => {
+          result.results.forEach(answer => {
+            if (!answer.isCorrect) {
+              incorrectIds.add(answer.wordId);
+            }
+          });
+        });
+        setIncorrectWordIds(incorrectIds);
+        console.log("집계된 틀린 단어 ID 목록:", incorrectIds); // 디버깅용 로그
+
       } catch (error) {
-        console.error("Failed to load today's words:", error);
+        console.error("Failed to load today's words or test results:", error);
       } finally {
         setIsLoading(false);
       }
     };
     
     loadData();
-  }, [dbUser]);
+  }, [dbUser, currentUser]);
 
   const handleLearningComplete = async () => {
     if (!currentUser || !dbUser) return;
@@ -129,6 +146,7 @@ const LearningPage: React.FC = () => {
               key={word.id}
               word={word}
               index={index + 1}
+              isIncorrect={incorrectWordIds.has(word.id)}
               onWordClick={handleWordClick}
             />
           ))}
