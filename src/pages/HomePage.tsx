@@ -1,9 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { FcGoogle } from 'react-icons/fc';
 
 const HomePage: React.FC = () => {
-  const { currentUser } = useAuth();
+  const { currentUser, loginWithGoogle } = useAuth();
+
+  const handleStart = async () => {
+    try {
+      await loginWithGoogle();
+    } catch (error) {
+      console.error("로그인 실패:", error);
+      alert("로그인에 실패했습니다. 다시 시도해주세요.");
+    }
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 text-center p-6">
@@ -13,15 +23,19 @@ const HomePage: React.FC = () => {
       <p className="text-xl text-gray-700 mb-8">
         매일 새로운 단어를 학습하고 퀴즈로 실력을 테스트하세요.
       </p>
-      <div className="flex space-x-4">
+      <div className="w-full flex justify-center">
         {currentUser ? (
           <Link to="/learn" className="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 transition-colors">
             학습 시작하기
           </Link>
         ) : (
-          <Link to="/login" className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform transform hover:scale-105">
-            Google 계정으로 시작하기
-          </Link>
+          <button 
+            onClick={handleStart}
+            className="flex items-center justify-center gap-3 bg-white text-gray-700 font-semibold py-3 px-8 border border-gray-300 rounded-lg shadow-sm hover:bg-gray-100 transition-colors"
+          >
+            <FcGoogle size={22} />
+            <span>구글 계정으로 계속하기</span>
+          </button>
         )}
       </div>
       <div className="mt-12 p-6 border-t border-gray-200 w-full max-w-4xl">

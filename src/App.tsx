@@ -1,30 +1,32 @@
 import { Routes, Route } from 'react-router-dom';
-import ProtectedRoute from '@/components/ProtectedRoute';
-import ProtectedLayout from '@/components/ProtectedLayout';
-import LoginPage from '@/pages/Login';
-import LearningPage from '@/pages/LearningPage';
-import TestPage from '@/pages/TestPage';
-import ImageCardPage from '@/pages/ImageCardPage';
-import HomePage from '@/pages/HomePage';
-import TestResultPage from '@/pages/TestResultPage';
+import { AuthProvider } from './contexts/AuthContext';
+import PrivateRoute from './components/PrivateRoute';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import LearningPage from './pages/LearningPage';
+import TestPage from './pages/TestPage';
+import ImageCardPage from './pages/ImageCardPage';
+import TestResultPage from './pages/TestResultPage';
+import ProtectedLayout from './components/ProtectedLayout';
 
 function App() {
   return (
-    <Routes>
-      {/* Public Routes */}
-      <Route path="/" element={<HomePage />} />
-      <Route path="/login" element={<LoginPage />} />
-      
-      {/* Protected Routes with Header Layout */}
-      <Route element={<ProtectedRoute />}>
-        <Route element={<ProtectedLayout />}>
-          <Route path="/learn" element={<LearningPage />} />
-          <Route path="/test" element={<TestPage />} />
-          <Route path="/test-result" element={<TestResultPage />} />
-          <Route path="/image-cards" element={<ImageCardPage />} />
-        </Route>
-      </Route>
-    </Routes>
+    <AuthProvider>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          
+          {/* Private Routes */}
+          <Route element={<ProtectedLayout />}>
+            <Route path="/learn" element={<PrivateRoute><LearningPage /></PrivateRoute>} />
+            <Route path="/test" element={<PrivateRoute><TestPage /></PrivateRoute>} />
+            <Route path="/image-cards" element={<PrivateRoute><ImageCardPage /></PrivateRoute>} />
+            <Route path="/test-result" element={<PrivateRoute><TestResultPage /></PrivateRoute>} />
+          </Route>
+        </Routes>
+      </div>
+    </AuthProvider>
   );
 }
 

@@ -135,6 +135,43 @@ export const getTestResultsForUser = async (userId: string): Promise<TestResult[
   }
 };
 
+/**
+ * ID를 사용하여 특정 시험 결과를 가져옵니다.
+ * @param userId - 사용자의 ID
+ * @param resultId - 시험 결과 문서의 ID
+ * @returns {Promise<TestResult | null>} 시험 결과 데이터 또는 null
+ */
+export const getTestResultById = async (userId: string, resultId: string): Promise<TestResult | null> => {
+  if (!userId || !resultId) {
+    throw new Error('User ID and Result ID are required.');
+  }
+  try {
+    const docRef = doc(db, 'users', userId, 'testResults', resultId);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      const data = docSnap.data();
+      return {
+        id: docSnap.id,
+        userId: data.userId,
+        results: data.results,
+        score: data.score,
+        createdAt: data.createdAt.toDate(),
+        cycle: data.cycle,
+        day: data.day,
+        stageAdvanced: data.stageAdvanced,
+        isFreeTest: data.isFreeTest,
+      };
+    } else {
+      console.log("No such document!");
+      return null;
+    }
+  } catch (error) {
+    console.error("Error fetching test result by ID: ", error);
+    throw new Error("Failed to fetch test result by ID.");
+  }
+};
+
 // 새로운 사이클 설정
 export const CYCLE_CONFIG: { [key: number]: { wordsPerDay: number; duration: number; } } = {
   1: { wordsPerDay: 25, duration: 20 },

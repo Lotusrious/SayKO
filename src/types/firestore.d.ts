@@ -51,15 +51,17 @@ export interface TestResult {
   userId: string; // 'users' 문서 ID (UID) 참조
   cycle: number; // 시험 본 시점의 사이클
   day: number;
-  results: {
-    wordId: string;
-    kor: string;
-    eng: string;
-    userAnswer: string;
-    isCorrect: boolean;
-  }[];
+  results: TestAnswer[];
   score: number;
   createdAt: Date;
   stageAdvanced?: boolean;
-  isFreeTest?: boolean;
+  isFreeTest?: boolean; // 자유 시험 여부
+}
+
+export interface TestAnswer {
+  wordId: string;
+  kor: string;
+  eng: string;
+  userAnswer: string;
+  isCorrect: boolean;
 } 

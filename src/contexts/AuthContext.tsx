@@ -1,6 +1,11 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
-import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { 
+  onAuthStateChanged, 
+  signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from 'firebase/auth';
 import type { User as AuthUser } from 'firebase/auth';
 import { auth } from '../firebase';
 import { getUserData } from '../services/userService';
@@ -11,6 +16,7 @@ interface AuthContextType {
   currentUser: AuthUser | null;
   dbUser: DbUser | null; // Firestore 사용자 정보
   loading: boolean;
+  loginWithGoogle: () => Promise<void>; // Google 로그인 함수
   logout: () => Promise<void>; // logout 함수 타입 추가
   refreshDbUser: () => Promise<void>; // dbUser 갱신 함수
 }
@@ -21,6 +27,7 @@ const AuthContext = createContext<AuthContextType>({
   currentUser: null,
   dbUser: null,
   loading: true,
+  loginWithGoogle: async () => {},
   logout: async () => {}, // 기본값 추가
   refreshDbUser: async () => {},
 });
@@ -80,6 +87,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
   };
 
+  const loginWithGoogle = async () => {
+    const provider = new GoogleAuthProvider();
+    await signInWithPopup(auth, provider);
+  };
+
   const logout = () => {
     return signOut(auth);
   };
@@ -89,6 +101,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     currentUser,
     dbUser,
     loading,
+    loginWithGoogle,
     logout, // value 객체에 logout 함수 추가
     refreshDbUser,
   };

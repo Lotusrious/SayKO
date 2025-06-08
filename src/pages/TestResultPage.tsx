@@ -4,7 +4,7 @@ import { doc, getDoc, runTransaction } from 'firebase/firestore';
 import { db } from '@/firebase';
 import type { TestResult, Vocabulary } from '@/types/firestore';
 import { useAuth } from '@/contexts/AuthContext';
-import { saveTestResult, CYCLE_CONFIG } from '@/services/vocabularyService';
+import { saveTestResult, getTestResultById, CYCLE_CONFIG } from '@/services/vocabularyService';
 
 const TestResultPage = () => {
   const navigate = useNavigate();
@@ -16,49 +16,27 @@ const TestResultPage = () => {
   const [isUpdatingStage, setIsUpdatingStage] = useState(false);
 
   useEffect(() => {
-    const processResult = async () => {
-      const resultData = location.state?.resultData;
+    const fetchResult = async () => {
+      const resultId = location.state?.resultId;
       
-      if (!resultData || !currentUser) {
+      if (!resultId || !currentUser) {
         setLoading(false);
-        console.error("결과 데이터가 없거나 사용자가 로그인하지 않았습니다.");
-        // navigate('/'); // 사용자를 홈페이지로 리디렉션할 수 있습니다.
+        console.error("결과 ID가 없거나 사용자가 로그인하지 않았습니다.");
+        navigate('/');
         return;
       }
 
-      if (resultData.isFreeTest) {
-        // 자유 시험 모드 결과 처리
-        const freeTestResult: TestResult = {
-          id: 'free-test-' + new Date().getTime(),
-          userId: currentUser.uid,
-          createdAt: new Date(),
-          ...resultData
-        };
-        setResult(freeTestResult);
-      } else {
-        // 일반 시험 모드 결과 처리 (저장)
-        try {
-          // Firestore에 저장할 데이터에서 id와 createdAt을 제외합니다.
-          const { results, score, cycle, day } = resultData;
-          const dataToSave = { userId: currentUser.uid, results, score, cycle, day, stageAdvanced: false };
-          
-          const docId = await saveTestResult(currentUser.uid, dataToSave);
-          
-          const finalResult: TestResult = {
-            id: docId,
-            createdAt: new Date(), // serverTimestamp는 저장 시에만 사용되므로, 화면 표시는 현재 시간으로.
-            ...dataToSave
-          };
-          setResult(finalResult);
-
-        } catch (error) {
-          console.error("시험 결과 저장에 실패했습니다:", error);
-        }
+      try {
+        const fetchedResult = await getTestResultById(currentUser.uid, resultId);
+        setResult(fetchedResult);
+      } catch (error) {
+        console.error("시험 결과를 불러오는 데 실패했습니다:", error);
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     };
 
-    processResult();
+    fetchResult();
   }, [location.state, currentUser, navigate]);
 
   const handleNextStage = async () => {
@@ -168,9 +146,12 @@ const TestResultPage = () => {
       </div>
       
       <div className="flex justify-center space-x-4 mb-8">
-        <Link to="/learn" className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded inline-block">
+        <button 
+          onClick={() => navigate('/learn', { state: { timestamp: Date.now() } })}
+          className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded inline-block"
+        >
           학습 페이지로 돌아가기
-        </Link>
+        </button>
         <button onClick={handleRetakeAll} className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
           문제 다시 풀기
         </button>

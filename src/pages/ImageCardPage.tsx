@@ -10,14 +10,14 @@ const ImageCardPage: React.FC = () => {
   const navigate = useNavigate();
   
   // LearningPage에서 전달받은 오늘의 단어 목록
-  const todayWords = location.state?.todayWords as Vocabulary[] || [];
+  const words = location.state?.words as Vocabulary[] || [];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isRevealed, setIsRevealed] = useState(false);
   const nodeRef = useRef(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  if (todayWords.length === 0) {
+  if (words.length === 0) {
     // 단어 데이터가 없으면 학습 페이지로 돌려보냄
     navigate('/learn');
     return null;
@@ -29,7 +29,7 @@ const ImageCardPage: React.FC = () => {
       setIsRevealed(true);
     } else {
       // 다음 카드로 넘어감
-      if (currentIndex < todayWords.length - 1) {
+      if (currentIndex < words.length - 1) {
         setIsRevealed(false);
         setCurrentIndex(currentIndex + 1);
       } else {
@@ -44,7 +44,7 @@ const ImageCardPage: React.FC = () => {
     navigate('/learn'); // 모달이 닫히면 페이지 이동
   };
 
-  const currentWord = todayWords[currentIndex];
+  const currentWord = words[currentIndex];
   // Firestore에 저장된 imageUrl을 직접 사용합니다.
   const imageUrl = currentWord.imageUrl;
 
@@ -86,7 +86,7 @@ const ImageCardPage: React.FC = () => {
       </SwitchTransition>
       
       <div className="absolute bottom-5 text-sm text-gray-500">
-        {currentIndex + 1} / {todayWords.length}
+        {currentIndex + 1} / {words.length}
       </div>
 
       <AlertModal
