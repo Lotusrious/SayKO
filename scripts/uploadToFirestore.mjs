@@ -13,29 +13,29 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
-async function uploadVocabularies() {
-  const vocabulariesFilePath = path.resolve('src/data/vocabularies.json');
+async function uploadWords() {
+  const wordsFilePath = path.resolve('src/data/initialWords.json');
   
-  console.log('Reading vocabularies.json...');
-  const vocabularies = JSON.parse(await fs.readFile(vocabulariesFilePath, 'utf-8'));
+  console.log('Reading initialWords.json...');
+  const words = JSON.parse(await fs.readFile(wordsFilePath, 'utf-8'));
 
-  const collectionRef = db.collection('vocabularies');
+  const collectionRef = db.collection('words');
   const batch = db.batch();
 
-  console.log('Preparing batch write to Firestore...');
-  vocabularies.forEach(vocab => {
+  console.log('Preparing batch write to Firestore for "words" collection...');
+  words.forEach(word => {
     // 각 단어를 문서로 추가합니다. 문서 ID는 자동으로 생성됩니다.
     const docRef = collectionRef.doc(); 
-    batch.set(docRef, vocab);
+    batch.set(docRef, word);
   });
 
   try {
     console.log('Committing batch write...');
     await batch.commit();
-    console.log(`Successfully uploaded ${vocabularies.length} documents to 'vocabularies' collection.`);
+    console.log(`Successfully uploaded ${words.length} documents to 'words' collection.`);
   } catch (error) {
     console.error('Error uploading documents to Firestore:', error);
   }
 }
 
-uploadVocabularies(); 
+uploadWords(); 
